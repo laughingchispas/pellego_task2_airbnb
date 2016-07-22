@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="angularApp">
 <head lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=deivice-width, initial-scale=1"/>
@@ -7,10 +7,106 @@
     <title>airbnb task 2 pellego</title>
 
     <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/font.css"/>
+    <link rel="stylesheet" type="text/css" href="fonts/icons.css"/>
+
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angularApp.js"></script>
 </head>
 
-<body>
+<body ng-controller="airbnbController">
 
+<header>
+    <div class="nav-bar">
+        <div class="brand-logo">
+            <i class="icon icon-airbnb icon-size-2"></i>
+        </div>
+        <a href="#" class="back-to">
+            <i class="icon icon-chevron-left"></i>
+            <p>Back to search results</p>
+        </a>
+        <div class="center-nav">
+            <a href="#"  class="where-to">
+                <i class="icon icon-search"></i>
+                <p>Where to?</p>
+            </a>
+            <a href="#" class="membership">
+                Become a host
+            </a>
+        </div>
+        <div class="nav-buttons">                   <!--here is good place for ng-repeats!-->
+            <div class="navLinks" ng-repeat="card in navCards">
+                <a href="#" class="navLink">
+                    <p>{{card.page}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="image-banner">
+</div>
+<div class="property-title">
+    <div class="user-basic-info">
+        <img class="user-avatar" src="assets/15.jpg">
+        <div ng-repeat="user in users">    <!-- here we are going to need to extract info from a user object -->
+            <p>{{user.name}}</p>
+        </div>
+    </div>
+    <div class="property-description">
+        <div ng-repeat="property in properties">    <!-- here we are going to need to extract info from a user object -->
+            <h2>{{property.description}}</h2>
+            <div class="small-box">
+                <p> {{property.city}}, {{property.state}}, {{property.country}} </p>
+                <div class="star-box">
+                    <i class="icon icon-star"></i>
+                    <i class="icon icon-star"></i>
+                    <i class="icon icon-star"></i>
+                    <i class="icon icon-star"></i>
+                    <i class="icon icon-star-half"></i>
+                </div>
+                <i class="icon icon-caret-down"></i>
+                <p>{{property.reviews}} reviews</p>
+            </div>
+            <div class="small-box">                    <!--another place to repeat information -->
+               <div class="icon-box">
+                   <div class="icon-in-box">
+                        <i class="icon icon-entire-place icon-size-2"></i>
+                    </div>
+                    <div class="icon-in-box">
+                        <i class="icon icon-group icon-size-2"></i>
+                    </div>
+                    <div class="icon-in-box">
+                        <i class="icon icon-rooms icon-size-2"></i>
+                    </div>
+                    <div class="icon-in-box">
+                        <i class="icon icon-double-bed icon-size-2"></i>
+                    </div>
+                </div>
+            </div>
+                <div class="icon-text-box">
+                    <p>{{property.type}}</p>
+                    <p>{{property.guests}}</p>
+                    <p>{{property.bedrooms}}</p>
+                    <p>{{property.beds}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="property-icons">
+    </div>
+
+
+</div>
+
+<div class="property-info">
+    <h2>What guests liked about this place</h2>
+    <div class="char-containter">
+        <div class="liked-characteristics" ng-repeat="like in likes">
+            <p>{{like}}</p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,229 @@
+/******* COLOR VARIABLES *********/
+
+$brand-color: #ff5a5f;                  /* salmon */
+$brand-highlight-color: #ffaa91;        /* light salmon */
+
+$accent-icon-color: #ffb400;            /* yellow */
+
+$body-text-color: #484848;              /* black */
+$accent-text-color: #757575;            /*gray*/
+
+$chip-bg-color: #dcedec;        /* light green */
+$chip-text-color: #007a87;      /* dark green */
+
+$body-bg-color: #ffffff;         /* white */
+$bg-contrast-color: #f5f5f5;    /* light gray */
+$footer-bg-color: #2b2d2e;      /* dark gray */
+
+/** MY ADDITION!!! **/
+$nav-border-color: #c1c1c1;
+
+$facebook-brand-color: #3B5998;
+
+$center-positioning: 5px 300px 0 250px;
+
+
+/*********** FONT VARIABLES *******************/
+
+$ff: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+$section-heading-fs: 18px;
+$body-content-fs: 14px;
+$subtitle-fs: 0.85em;
+
+
+
+body {                        /** why do i have to do this? why isn't this automatically 0? **/
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $body-text-color;
+}
+
+a.visited {
+  color: $body-text-color;
+}
+
+.icon-star, .icon-star-half {
+    color: $accent-icon-color;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  color: $brand-color;
+  padding: 10px 20px;
+  border-style: solid;
+  border-color: $nav-border-color;
+  border-width: 0 1px 0 0;
+}
+
+.back-to {
+  display: flex;
+  align-items: baseline;
+  background-color: $bg-contrast-color;
+  border-style: solid;
+  border-color: $nav-border-color;
+  border-width: 0 1px 0 0;
+  padding: 0 25px;
+
+  .icon-chevron-left {
+    color: $nav-border-color;
+  }
+
+  p {
+    color: $body-text-color;
+    font-family: $ff;
+    font-size: $section-heading-fs;
+    padding: 5px;
+  }
+
+}
+
+.center-nav {
+  display: flex;
+  align-items: baseline;
+  flex: 1 auto;
+  justify-content: space-between;
+  font-family: $ff;
+
+  .where-to {
+    display: flex;
+    align-items: baseline;
+
+    .icon-search {
+      color: $nav-border-color;
+      padding: 0 15px;
+    }
+  }
+
+  .membership {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 0 5px;
+    margin: 0 30px 0 0;
+  }
+}
+
+.nav-buttons {
+  display: flex;
+  height: 69px;
+
+
+  .navLinks {
+
+    p {
+     height: 44.5px;         /**is there a better way to align this?**/
+     margin: 0;
+     padding: 0;
+     padding: 24.5px 0 0 0;
+     width: 80px;
+     text-align: center;
+     font-family: $ff;
+     border-style: solid;
+     border-width: 0 0 0 1px;
+     border-color: $nav-border-color;
+    }
+  }
+}
+
+.image-banner {
+  background-image: url('../assets/07.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+}
+
+.property-title {
+  display: flex;
+  padding: $center-positioning;
+
+          .user-basic-info {
+            width: 200px;
+
+            .user-avatar {
+              width: 90px;
+              border-radius: 45px;
+              margin: 20px 0 0 0;
+            }
+
+            p {
+              font-family: $ff;
+              text-align: center;
+              width: 90px;
+            }
+          }
+
+
+
+
+          .property-description {
+            display: flex;
+            font-family: $ff;
+
+              p {
+                margin: 0;
+                padding: 0;
+              }
+
+              .small-box {
+                display: flex;
+                align-items: baseline;
+
+                .star-box {
+                    padding: 0 0 0 10px;
+                }
+              }
+
+              .icon-caret-down {
+                padding: 0 5px 0 5px;
+              }
+
+              .icon-box {
+                width: 480px;
+                display: flex;
+                justify-content: space-around;
+
+
+              }
+
+              .icon-text-box {
+                width: 480px;
+                display: flex;
+                justify-content: space-around;
+
+                p {
+                    width: 120px;
+                    text-align: center;
+                    }
+              }
+          }
+}
+
+
+.property-info {
+    background-color: $bg-contrast-color;
+    height: 200px;
+    font-family: $ff;
+    padding: $center-positioning;
+
+    .char-containter {
+      display:flex;
+
+        .liked-characteristics {
+            background-color: $chip-bg-color;
+            color: $chip-text-color;
+            margin: 0 5px;
+            border-radius: 3px;
+            padding: 0 5px;
+
+        }
+      }
+  }
