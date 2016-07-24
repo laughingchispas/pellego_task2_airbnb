@@ -20,7 +20,9 @@ $nav-border-color: #c1c1c1;
 
 $facebook-brand-color: #3B5998;
 
-$center-positioning: 5px 300px 0 250px;
+$center-positioning: 5px 450px 0 120px;
+
+$calendar-positioning: 0 20px 0 20px;
 
 
 /*********** FONT VARIABLES *******************/
@@ -49,6 +51,14 @@ a.visited {
 .icon-star, .icon-star-half {
     color: $accent-icon-color;
 }
+
+.text-in-salmon {
+    color: $brand-color;
+}
+
+p {
+    line-height: .75em;
+    }
 
 .nav-bar {
   display: flex;
@@ -139,11 +149,120 @@ a.visited {
   background-size: cover;
   width: 100%;
   height: 700px;
-}
+  position: relative;
+
+  .calendar {
+      width: 300px;
+      height: 500px;
+      position: absolute;
+      left: 850px;
+      bottom: -460px;
+      z-index: 200;
+
+      .price-container {
+          padding: $calendar-positioning;
+          background-color: $footer-bg-color;
+
+          .price {
+            display: flex;
+            color: $body-bg-color;
+            font-family: $ff;
+            align-items: center;
+            height: 40px;
+            justify-content: space-between;
+
+            .exact-amount {
+              display: flex;
+              align-items: center;
+              font-size: $section-heading-fs;
+
+              .icon {
+                color: $accent-icon-color;
+              }
+            }
+
+            .per-night {
+                font-size: $body-content-fs;
+            }
+          }
+      }
+
+      .instant-book {
+        height: 180px;
+        background-color: $body-bg-color;
+        border-style: solid;
+        border-color: $nav-border-color;
+        border-width: 1px;
+        padding: $calendar-positioning;
+
+        .calendar-description {
+            display: flex;
+            font-family: $ff;
+            justify-content: space-between;
+            padding: 0 0 20px 0;
+
+
+            .dates-form {
+                width: 70px;
+                height: 25px;
+            }
+
+            .guests-drop-down {
+              display: flex;
+              align-items: center;
+              height: 30px;
+              border-style: solid;
+              border-color: $nav-border-color;
+              border-width: 1px;
+              justify-content: space-around;
+
+              p {
+                font-size:$body-content-fs;
+              }
+            }
+        }
+      }
+
+
+        .instant-book-box{
+          background-color: $brand-color;
+          height: 45px;
+          border-radius: 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 260px;
+
+          .icon {
+            color: $accent-icon-color;
+          }
+
+          p {
+            color: $body-bg-color;
+            font-family: $ff;
+          }
+        }
+      }
+
+      .empty-space-top {
+        height: 50px;
+        }
+
+      .wish-list {
+        height: 200px;
+        background-color: $body-bg-color;
+        border-style: solid;
+        border-color: $nav-border-color;
+        border-width: 1px;
+        padding: $calendar-positioning;
+        }
+  }
+
 
 .property-title {
   display: flex;
   padding: $center-positioning;
+  height: 175px;
 
           .user-basic-info {
             width: 200px;
@@ -202,6 +321,9 @@ a.visited {
                 p {
                     width: 120px;
                     text-align: center;
+
+
+
                     }
               }
           }
@@ -210,20 +332,122 @@ a.visited {
 
 .property-info {
     background-color: $bg-contrast-color;
-    height: 200px;
     font-family: $ff;
     padding: $center-positioning;
+    font-size: $body-content-fs;
 
-    .char-containter {
+
+    h2 {
+      font-size: $section-heading-fs;
+    }
+
+    .char-container {
       display:flex;
 
         .liked-characteristics {
             background-color: $chip-bg-color;
             color: $chip-text-color;
             margin: 0 5px;
-            border-radius: 3px;
+            border-radius: 1.5px;
             padding: 0 5px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+        }
+    }
 
+    .comments-space {
+        padding: 5px 0 5px 0;
+        p {
+          font-size: $body-content-fs;
+        }
+    }
+
+    .contact-host-letters {
+        color: $brand-color;
+        padding: 0 0 15px 0;
+    }
+
+
+
+    .description-sections {
+      border-style: solid;
+      border-color: $nav-border-color;
+      border-width: 1px 0 0 0;
+      display: flex;
+      justify-content: space-between;
+
+      .column-one {
+          flex-grow: 1;
+          }
+
+      .column-two {
+          flex-grow: 1;
+          }
+
+      .column-three {
+          @extend .column-two;
+          }
+
+      .icon-and-text {
+        display: flex;
+        align-items: center;
+
+        .icon {
+        padding: 5px;
         }
       }
-  }
+
+    }
+}
+
+.footer {
+    background-color: $footer-bg-color;
+    padding: $center-positioning;
+    height: 400px;
+    font-family: $ff;
+    text-align: center;
+    color: $body-bg-color;
+
+    .top-box-footer {
+      display: flex;
+
+      .left-top-footer-box {
+        flex-grow: 3;
+        padding: 15px 20px 0 20px;
+        }
+      .right-top-footer-box {
+        flex-grow: 7;
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 20px 0 20px;
+
+        }
+    }
+
+    .bottom-box-footer {
+      height: 60px;
+      border-style: solid;
+      border-color: $nav-border-color;
+      border-width: 1px 0 0 0;
+
+      .footer-icons {
+        display: flex;
+        justify-content: center;
+
+        .icon {
+            margin: 0 12px;
+            padding: 12px 15px;
+            border-style: solid;
+            border-color: $nav-border-color;
+            border-width: 1px;
+            border-radius: 40px;
+        }
+      }
+
+      p {
+        color: $accent-text-color;
+        font-size: $body-content-fs;
+      }
+    }
+}

@@ -45,19 +45,67 @@
 </header>
 
 <div class="image-banner">
+    <div class="calendar">
+        <div class="price-container">
+            <div class="price">
+                <div class="exact-amount">
+                    <p>{{properties[0].price}}</p>
+                    <i class="icon icon-bolt"></i>
+                </div>
+                <div class="per-night">
+                    <p>Per Night</p>
+                </div>
+            </div>
+        </div>
+
+
+        <form class="instant-book">
+            <div class="booking-calendar">
+                <div class="calendar-description">
+                    <div>
+                        <p>Checkin</p>
+                        <input type="text" placeholder="mm/dd/yyyy" class="dates-form">
+                    </div>
+                    <div>
+                        <p>Checkout</p>
+                        <input type="text" placeholder="mm/dd/yyyy" class="dates-form">
+                    </div>
+                    <div>
+                        <p>Guests</p>
+                        <div class="guests-drop-down">
+                            <p>1</p>
+                            <i class="icon icon-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div type="submit" value="Instant Book" class="instant-book-box">
+                <i class="icon icon-bolt"></i>
+                <p>Instant Book</p>
+            </div>
+        </form>
+
+        <div class="empty-space-top "></div>
+
+        <div class="wish-list">
+
+        </div>
+    </div>
 </div>
+
+
 <div class="property-title">
     <div class="user-basic-info">
         <img class="user-avatar" src="assets/15.jpg">
-        <div ng-repeat="user in users">    <!-- here we are going to need to extract info from a user object -->
-            <p>{{user.name}}</p>
+        <div>    <!-- here we are going to need to extract info from a user object -->
+            <p>{{users[0].name}}</p>
         </div>
     </div>
     <div class="property-description">
-        <div ng-repeat="property in properties">    <!-- here we are going to need to extract info from a user object -->
-            <h2>{{property.description}}</h2>
+        <div>    <!-- here we are going to need to extract info from a user object -->
+            <h2>{{properties[0].description}}</h2>
             <div class="small-box">
-                <p> {{property.city}}, {{property.state}}, {{property.country}} </p>
+                <p> {{properties[0].city}}, {{properties[0].state}}, {{properties[0].country}} </p>
                 <div class="star-box">
                     <i class="icon icon-star"></i>
                     <i class="icon icon-star"></i>
@@ -66,7 +114,7 @@
                     <i class="icon icon-star-half"></i>
                 </div>
                 <i class="icon icon-caret-down"></i>
-                <p>{{property.reviews}} reviews</p>
+                <p>{{properties[0].reviews}} reviews</p>
             </div>
             <div class="small-box">                    <!--another place to repeat information -->
                <div class="icon-box">
@@ -85,28 +133,195 @@
                 </div>
             </div>
                 <div class="icon-text-box">
-                    <p>{{property.type}}</p>
-                    <p>{{property.guests}}</p>
-                    <p>{{property.bedrooms}}</p>
-                    <p>{{property.beds}}</p>
+                    <p>{{properties[0].type}}</p>
+                    <p>{{properties[0].guests}}</p>
+                    <p>{{properties[0].bedrooms}}</p>
+                    <p>{{properties[0].beds}}</p>
                 </div>
             </div>
         </div>
     </div>
     <div class="property-icons">
     </div>
-
-
 </div>
 
 <div class="property-info">
-    <h2>What guests liked about this place</h2>
-    <div class="char-containter">
+    <h2> What guests liked about this place</h2>
+    <div class="char-container">
         <div class="liked-characteristics" ng-repeat="like in likes">
             <p>{{like}}</p>
         </div>
     </div>
+    <h2>About this listing </h2>
+    <div class="comments-space">
+        <div ng-repeat="comment in comments">
+        <p>
+           {{comment}}
+        </p>
+        </div>
+    </div>
+    <a href="#">
+        <p class="contact-host-letters">Contact Host</p>
+    </a>
+
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>The Space</h3>
+        </div>
+        <div class="column-two">
+            <p>Accomodates: <b>{{properties[0].guests}}</b></p>
+            <p>Bathrooms: <b>{{properties[0].baths}}</b></p>
+            <p>Bedrooms: <b>{{properties[0].bedrooms}}</b></p>
+            <a href="#"  class="text-in-salmon">
+                <p>Contact Host</p>
+            </a>
+        </div>
+        <div class="column-three">
+            <p>Beds: <b>{{properties[0].beds}}</b></p>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>Amenities</h3>
+        </div>
+        <div class="column-two">
+            <div class="icon-and-text">
+                <i class="icon icon-internet"></i>
+                <p> Internet </p>
+            </div>
+            <div class="icon-and-text">
+                <i class="icon icon-tv"></i>
+                <p> TV </p>
+            </div>
+        </div>
+        <div class="column-three">
+            <div class="icon-and-text">
+                <i class="icon icon-essentials"></i>
+                <p> Essentials </p>
+            </div>
+            <div class="icon-and-text">
+                <i class="icon icon-shampoo"></i>
+                <p> Shampoo </p>
+            </div>
+            <a href="#"  class="text-in-salmon">
+                <p>More+</p>
+            </a>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>Prices</h3>
+        </div>
+        <div class="column-two">
+            <p>bla</p>
+        </div>
+        <div class="column-three">
+            <p>bla</p>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>Description</h3>
+        </div>
+        <div class="column-two">
+            <p>bla</p>
+            <a href="#"  class="text-in-salmon">
+                <p>More+</p>
+            </a>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>The Space</h3>
+        </div>
+        <div class="column-two">
+            <h3></h3>
+        </div>
+        <div class="column-three">
+            <h3></h3>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>House Rules</h3>
+        </div>
+        <div class="column-two">
+            <p>bla</p>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>Safety Features</h3>
+        </div>
+        <div class="column-two">   => NG REPEAT!
+            <p>Smoke Detector</p>
+            <p>bla</p>
+            <p>bla</p>
+        </div>
+        <div class="column-three">
+            <p>bla</p>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>Availability</h3>
+        </div>
+        <div class="column-two">
+            <p>bla</p>
+        </div>
+        <div class="column-three">
+            <a href="#"  class="text-in-salmon">
+                <p>View Calendar</p>
+            </a>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one">
+            <h3>Guidebook</h3>
+        </div>
+        <div class="column-two">
+            <p>Things to do in San fran</p>
+        </div>
+    </div>
 </div>
+
+<div class="footer">
+    <div class="top-box-footer">
+        <div class="left-top-footer-box">assadfsdf</div>
+        <div class="right-top-footer-box">
+            <div>
+                <p>Company</p>
+                <a href="#">
+                    <p class="contact-host-letters">Contact Host</p>
+                </a>
+                <a href="#">
+                    <p class="contact-host-letters">Contact Host</p>
+                </a>
+                <a href="#">
+                    <p class="contact-host-letters">Contact Host</p>
+                </a>
+
+            </div>
+            <div>discover</div>
+            <div>last one</div>
+        </div>
+    </div>
+    <div class="bottom-box-footer">
+        <h3>Join Us On</h3>
+        <div class="footer-icons">
+            <i class="icon icon-facebook"></i>
+            <i class="icon icon-google-plus"></i>
+            <i class="icon icon-twitter"></i>
+            <i class="icon icon-linkedin"></i>
+            <i class="icon icon-pinterest"></i>
+            <i class="icon icon-youtube"></i>
+            <i class="icon icon-instagram"></i>
+        </div>
+        <p> &copy Airbnb, Inc. </p>
+    </div>
+
+</div>
+
 
 </body>
 </html>
