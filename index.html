@@ -88,7 +88,30 @@
         <div class="empty-space-top "></div>
 
         <div class="wish-list">
-
+            <a href="#" class="save-to-wish-list-btn">
+                <i class="icon icon-heart-alt"></i>
+                <p>Save to Wish List</p>
+            </a>
+            <div class="saved">
+              <p>{{properties[0].saves}} travelers saved this place</p>
+            </div>
+            <div class="wish-list-additional">
+                <a href="#"  class="email">
+                    <i class="icon icon-envelope"></i>
+                    <p>Email</p>
+                </a>
+                <a href="#" class="messenger">
+                    <i class="icon icon-facebook-messenger"></i>
+                    <p>Messanger</p>
+                </a>
+                <a href="#" class="email">
+                    <p>...More</p>
+                </a>
+            </div>
+        </div>
+        <div class="report-listing">
+            <i class="icon icon-flag"></i>
+            <a href="#"><p>Report this listing</p></a>
         </div>
     </div>
 </div>
@@ -164,6 +187,8 @@
         <p class="contact-host-letters">Contact Host</p>
     </a>
 
+
+    <!--The Space-->
     <div class="description-sections">
         <div class="column-one">
             <h3>The Space</h3>
@@ -180,18 +205,22 @@
             <p>Beds: <b>{{properties[0].beds}}</b></p>
         </div>
     </div>
+
+    <!--Amenities-->
     <div class="description-sections">
         <div class="column-one">
             <h3>Amenities</h3>
         </div>
+        <div class="second-set-columns">
         <div class="column-two">
-            <div class="icon-and-text">
-                <i class="icon icon-internet"></i>
-                <p> Internet </p>
-            </div>
-            <div class="icon-and-text">
-                <i class="icon icon-tv"></i>
-                <p> TV </p>
+                <div class="icon-and-text">
+                    <i class="icon icon-internet"></i>
+                    <p> Internet </p>
+                </div>
+                <div class="icon-and-text">
+                    <i class="icon icon-tv"></i>
+                    <p> TV </p>
+                </div>
             </div>
         </div>
         <div class="column-three">
@@ -208,15 +237,19 @@
             </a>
         </div>
     </div>
+
+    <!--Prices-->
     <div class="description-sections">
         <div class="column-one">
             <h3>Prices</h3>
         </div>
-        <div class="column-two">
-            <p>bla</p>
-        </div>
-        <div class="column-three">
-            <p>bla</p>
+        <div class="second-set-columns">
+            <div class="column-two">
+                <p>{{currencies[0].USD}}{{prices[0].cleaningFee}}</p>
+            </div>
+            <div class="column-three">
+                <p>bla</p>
+            </div>
         </div>
     </div>
     <div class="description-sections">
@@ -241,6 +274,8 @@
             <h3></h3>
         </div>
     </div>
+
+    <!--House Rules-->
     <div class="description-sections">
         <div class="column-one">
             <h3>House Rules</h3>
@@ -285,37 +320,80 @@
     </div>
 </div>
 
+<div class="comments-section">
+    asdfsdf
+</div>
+
+<div class="bottom-section">
+    <div class="your-host">
+        <div class="user-basic-info">
+            <img class="user-avatar" src="assets/15.jpg">
+            <div>    <!-- here we are going to need to extract info from a user object -->
+                <p>{{users[0].name}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="property-location">
+        asdfasdf
+    </div>
+</div>
+
 <div class="footer">
     <div class="top-box-footer">
-        <div class="left-top-footer-box">assadfsdf</div>
+        <div class="left-top-footer-box">
+            <div class="language">
+                <p>English</p>
+                <i class="icon icon-caret-down"></i>
+            </div>
+            <div class="currency">
+                <p>USD</p>
+                <i class="icon icon-caret-down"></i>
+            </div>
+
+        </div>
         <div class="right-top-footer-box">
             <div>
-                <p>Company</p>
-                <a href="#">
-                    <p class="contact-host-letters">Contact Host</p>
-                </a>
-                <a href="#">
-                    <p class="contact-host-letters">Contact Host</p>
-                </a>
-                <a href="#">
-                    <p class="contact-host-letters">Contact Host</p>
-                </a>
-
+                <h4>Company</h4>
+                <a href="#"><p>About</p></a>
+                <a href="#"><p>Careers</p></a>
+                <a href="#"><p>Press</p></a>
+                <a href="#"><p>Blog</p></a>
+                <a href="#"><p>Help</p></a>
+                <a href="#"><p>Policies</p></a>
+                <a href="#"><p>Disaster Response</p></a>
+                <a href="#"><p>Terms & Policies</p></a>
             </div>
-            <div>discover</div>
-            <div>last one</div>
+            <div>
+                <h4>Discovery</h4>
+                <a href="#"><p>Trust & Safety</p></a>
+                <a href="#"><p>Travel Credit</p></a>
+                <a href="#"><p>Gift Cards</p></a>
+                <a href="#"><p>Airbnb Picks</p></a>
+                <a href="#"><p>Mobile</p></a>
+                <a href="#"><p>Airbnb Actiont</p></a>
+                <a href="#"><p>Business Travel</p></a>
+                <a href="#"><p>Site Map</p></a>
+                </a></div>
+            <div>
+                <h4>Hosting</h4>
+                <a href="#"><p>Why Host</p></a>
+                <a href="#"><p>Hospitality</p></a>
+                <a href="#"><p>Responsible Hosting</p></a>
+                <a href="#"><p>Home Safety</p></a>
+                <a href="#"><p>Instant Book</p></a>
+            </div>
         </div>
     </div>
     <div class="bottom-box-footer">
         <h3>Join Us On</h3>
         <div class="footer-icons">
-            <i class="icon icon-facebook"></i>
-            <i class="icon icon-google-plus"></i>
-            <i class="icon icon-twitter"></i>
-            <i class="icon icon-linkedin"></i>
-            <i class="icon icon-pinterest"></i>
-            <i class="icon icon-youtube"></i>
-            <i class="icon icon-instagram"></i>
+            <a href="#"><i class="icon icon-facebook"></i></a>
+            <a href="#"><i class="icon icon-google-plus"></i></a>
+            <a href="#"><i class="icon icon-twitter"></i></a>
+            <a href="#"><i class="icon icon-linkedin"></i></a>
+            <a href="#"><i class="icon icon-pinterest"></i></a>
+            <a href="#"><i class="icon icon-youtube"></i></a>
+            <a href="#"><i class="icon icon-instagram"></i></a>
         </div>
         <p> &copy Airbnb, Inc. </p>
     </div>

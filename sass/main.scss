@@ -21,8 +21,11 @@ $nav-border-color: #c1c1c1;
 $facebook-brand-color: #3B5998;
 
 $center-positioning: 5px 450px 0 120px;
+$wider-positioning: 0 120px;
 
 $calendar-positioning: 0 20px 0 20px;
+
+$interactive-box: 45px;
 
 
 /*********** FONT VARIABLES *******************/
@@ -60,87 +63,106 @@ p {
     line-height: .75em;
     }
 
-.nav-bar {
-  display: flex;
-  align-items: center;
-}
+.user-basic-info {
+    width: 200px;
 
-.brand-logo {
-  color: $brand-color;
-  padding: 10px 20px;
-  border-style: solid;
-  border-color: $nav-border-color;
-  border-width: 0 1px 0 0;
-}
-
-.back-to {
-  display: flex;
-  align-items: baseline;
-  background-color: $bg-contrast-color;
-  border-style: solid;
-  border-color: $nav-border-color;
-  border-width: 0 1px 0 0;
-  padding: 0 25px;
-
-  .icon-chevron-left {
-    color: $nav-border-color;
-  }
-
-  p {
-    color: $body-text-color;
-    font-family: $ff;
-    font-size: $section-heading-fs;
-    padding: 5px;
-  }
-
-}
-
-.center-nav {
-  display: flex;
-  align-items: baseline;
-  flex: 1 auto;
-  justify-content: space-between;
-  font-family: $ff;
-
-  .where-to {
-    display: flex;
-    align-items: baseline;
-
-    .icon-search {
-      color: $nav-border-color;
-      padding: 0 15px;
+    .user-avatar {
+      width: 90px;
+      border-radius: 45px;
+      margin: 20px 0 0 0;
     }
-  }
-
-  .membership {
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    padding: 0 5px;
-    margin: 0 30px 0 0;
-  }
-}
-
-.nav-buttons {
-  display: flex;
-  height: 69px;
-
-
-  .navLinks {
 
     p {
-     height: 44.5px;         /**is there a better way to align this?**/
-     margin: 0;
-     padding: 0;
-     padding: 24.5px 0 0 0;
-     width: 80px;
-     text-align: center;
-     font-family: $ff;
-     border-style: solid;
-     border-width: 0 0 0 1px;
-     border-color: $nav-border-color;
+      font-family: $ff;
+      text-align: center;
+      width: 90px;
     }
-  }
+}
+
+header {
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      height: 70px;
+    }
+
+    .brand-logo {
+      color: $brand-color;
+      padding: 10px 20px;
+      border-style: solid;
+      border-color: $nav-border-color;
+      border-width: 0 1px 0 0;
+    }
+
+    .back-to {
+      display: flex;
+      align-items: baseline;
+      background-color: $bg-contrast-color;
+      border-style: solid;
+      border-color: $nav-border-color;
+      border-width: 0 1px 0 0;
+      padding: 0 25px;
+      margin: 0;
+
+      .icon-chevron-left {
+        color: $nav-border-color;
+      }
+
+      p {
+        color: $body-text-color;
+        font-family: $ff;
+        font-size: $section-heading-fs;
+        padding: 5px;
+      }
+
+    }
+
+    .center-nav {
+      display: flex;
+      align-items: baseline;
+      flex: 1 auto;
+      justify-content: space-between;
+      font-family: $ff;
+
+      .where-to {
+        display: flex;
+        align-items: baseline;
+
+        .icon-search {
+          color: $nav-border-color;
+          padding: 0 15px;
+        }
+      }
+
+      .membership {
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        padding: 0 5px;
+        margin: 0 30px 0 0;
+      }
+    }
+
+    .nav-buttons {
+      display: flex;
+      height: 69px;
+
+          .navLinks {
+
+            p {
+             height: 44.5px;         /**is there a better way to align this?**/
+             margin: 0;
+             padding: 0;
+             padding: 24.5px 0 0 0;
+             width: 80px;
+             text-align: center;
+             font-family: $ff;
+             border-style: solid;
+             border-width: 0 0 0 1px;
+             border-color: $nav-border-color;
+            }
+          }
+    }
 }
 
 .image-banner {
@@ -155,13 +177,13 @@ p {
       width: 300px;
       height: 500px;
       position: absolute;
-      left: 850px;
+      right: 120px;
       bottom: -460px;
       z-index: 200;
 
       .price-container {
           padding: $calendar-positioning;
-          background-color: $footer-bg-color;
+          background-color: #444;
 
           .price {
             display: flex;
@@ -226,7 +248,7 @@ p {
 
         .instant-book-box{
           background-color: $brand-color;
-          height: 45px;
+          height: $interactive-box;
           border-radius: 1px;
           display: flex;
           align-items: center;
@@ -249,39 +271,86 @@ p {
         }
 
       .wish-list {
-        height: 200px;
+        height: 130px;
         background-color: $body-bg-color;
         border-style: solid;
         border-color: $nav-border-color;
         border-width: 1px;
-        padding: $calendar-positioning;
-        }
-  }
+        font-family: $ff;
+        padding: 20px 0 0 0;
+        position: relative;
 
+        .save-to-wish-list-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-style: solid;
+          border-color: $nav-border-color;
+          border-width: 1px;
+          margin: $calendar-positioning;
+
+          .icon {
+            padding: 0 5px;
+          }
+        }
+
+        .saved {
+            text-align: center;
+            font-size: $body-content-fs;
+        }
+
+        .wish-list-additional {
+            height: 40px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 300px;
+            display: flex;
+            justify-content: space-around;
+            border-style: solid;
+            border-color: $nav-border-color;
+            border-width: 1px 0 0 0;
+            font-size: $body-content-fs;
+
+            .icon {
+                padding: 0 5px;
+            }
+
+            .email {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .messenger {
+                @extend .email;
+                border-style: solid;
+                border-color: $nav-border-color;
+                border-width: 0 1px;
+                padding: 0 10px;
+            }
+        }
+
+      }
+
+      .report-listing {
+        display: flex;
+        font-family: $ff;
+        justify-content: center;
+        align-items: center;
+        font-size: $body-content-fs;
+
+
+        .icon {
+            padding: 5px;
+            }
+      }
+  }
 
 .property-title {
   display: flex;
   padding: $center-positioning;
   height: 175px;
-
-          .user-basic-info {
-            width: 200px;
-
-            .user-avatar {
-              width: 90px;
-              border-radius: 45px;
-              margin: 20px 0 0 0;
-            }
-
-            p {
-              font-family: $ff;
-              text-align: center;
-              width: 90px;
-            }
-          }
-
-
-
 
           .property-description {
             display: flex;
@@ -309,32 +378,28 @@ p {
                 width: 480px;
                 display: flex;
                 justify-content: space-around;
-
-
               }
 
               .icon-text-box {
-                width: 480px;
-                display: flex;
-                justify-content: space-around;
+                @extend .icon-box;
+                padding: 5px 0 0 0;
 
                 p {
                     width: 120px;
                     text-align: center;
-
-
-
-                    }
+                }
               }
           }
 }
-
 
 .property-info {
     background-color: $bg-contrast-color;
     font-family: $ff;
     padding: $center-positioning;
     font-size: $body-content-fs;
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    border-color: $nav-border-color;
 
 
     h2 {
@@ -375,36 +440,64 @@ p {
       border-color: $nav-border-color;
       border-width: 1px 0 0 0;
       display: flex;
-      justify-content: space-between;
 
       .column-one {
-          flex-grow: 1;
+          width: 40px;
+          flex: auto;
           }
 
-      .column-two {
-          flex-grow: 1;
-          }
-
-      .column-three {
-          @extend .column-two;
-          }
-
-      .icon-and-text {
+      .second-set-columns {
         display: flex;
-        align-items: center;
+        justify-content: space-between;
+        flex-grow: 1;
 
-        .icon {
-        padding: 5px;
-        }
+          .column-two {
+            background-color: green;
+              }
+
+          .column-three {
+              @extend .column-two;
+              }
+
+          .icon-and-text {
+            display: flex;
+            align-items: center;
+
+            .icon {
+            padding: 5px;
+            }
+          }
       }
+    }
+}
+
+.comments-section {
+    height: 400px;
+    background-color: $body-bg-color;
+    padding: $center-positioning;
+}
+
+.bottom-section {
+    background-color: $bg-contrast-color;
+    height: 400px;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: $nav-border-color;
+
+    .your-host {
+        padding: $center-positioning;
+    }
+
+    .property-location {
+        padding: $wider-positioning;
 
     }
 }
 
 .footer {
     background-color: $footer-bg-color;
-    padding: $center-positioning;
-    height: 400px;
+    padding: $wider-positioning;
+    height: 500px;
     font-family: $ff;
     text-align: center;
     color: $body-bg-color;
@@ -413,17 +506,51 @@ p {
       display: flex;
 
       .left-top-footer-box {
-        flex-grow: 3;
+        flex-grow: 2;
         padding: 15px 20px 0 20px;
-        }
+
+          .icon {
+            color: $accent-text-color;
+          }
+
+          .language {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #444;
+            color: $bg-contrast-color;
+            padding: 0 7px;
+            margin: 20px 0;
+            height: $interactive-box;
+          }
+
+          .currency {
+            @extend .language;
+          }
+
+      }
+
       .right-top-footer-box {
-        flex-grow: 7;
+        flex-grow: 3;
         display: flex;
         justify-content: space-around;
         padding: 15px 20px 0 20px;
+        text-align: left;
+        padding: 0 0 30px 0;
 
+        h4 {
+          font-size: $section-heading-fs;
         }
+
+        p {
+          color: $body-bg-color;
+          font-size: $body-content-fs;
+          line-height: .5em;
+        }
+
+      }
     }
+
 
     .bottom-box-footer {
       height: 60px;
@@ -434,6 +561,7 @@ p {
       .footer-icons {
         display: flex;
         justify-content: center;
+        padding: 5px 0 0 0;
 
         .icon {
             margin: 0 12px;
@@ -442,12 +570,14 @@ p {
             border-color: $nav-border-color;
             border-width: 1px;
             border-radius: 40px;
+            color: $body-bg-color;
         }
       }
 
       p {
         color: $accent-text-color;
         font-size: $body-content-fs;
+        padding: 10px 0 0 0;
       }
     }
 }

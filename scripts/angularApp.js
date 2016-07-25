@@ -7,7 +7,7 @@ myApp.controller('airbnbController', function($scope) {
     $scope.navCards = [
       {page: 'Help'},
       {page: 'Sign Up'},
-      {page: 'Log In'},
+      {page: 'Log In'}
     ];
 
 
@@ -17,7 +17,7 @@ myApp.controller('airbnbController', function($scope) {
 
 
     $scope.properties = [
-          {description: 'Private flat, with parking and yard', city: 'San Francisco', state: 'CA', country: 'USA', type: 'Entire home/apt', guests:'4', bedrooms: '1', beds:'2', reviews:'74', price: '$139', baths:'1'},
+          {description: 'Private flat, with parking and yard', city: 'San Francisco', state: 'CA', country: 'USA', type: 'Entire home/apt', guests:'4', bedrooms: '1', beds:'2', reviews:'74', price: '$139', baths:'1', saves: '634'}
         ];
 
 
@@ -30,5 +30,15 @@ myApp.controller('airbnbController', function($scope) {
         'Brand new remodeled bathroom',
         '1 block from subway and lots restaurants/bar walking distance'
         ]
+
+    $scope.prices = [
+          {cleaningFee: '30', name: 'Yann', bedrooms: 'search'}
+        ];
+
+
+     $scope.currencies = [
+          {USD: '$', name: '€'}
+        ];
+
 
 });
