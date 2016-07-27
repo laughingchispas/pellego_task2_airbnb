@@ -32,6 +32,11 @@ a.visited {
 p {
   line-height: .75em; }
 
+.three-dots {
+  position: relative;
+  top: -.25em;
+  padding: 0 3px 0 0; }
+
 .user-basic-info {
   width: 200px; }
   .user-basic-info .user-avatar {
@@ -47,61 +52,65 @@ header .nav-bar {
   display: flex;
   align-items: center;
   height: 70px; }
-header .brand-logo {
-  color: #ff5a5f;
-  padding: 10px 20px;
-  border-style: solid;
-  border-color: #c1c1c1;
-  border-width: 0 1px 0 0; }
-header .back-to {
-  display: flex;
-  align-items: baseline;
-  background-color: #f5f5f5;
-  border-style: solid;
-  border-color: #c1c1c1;
-  border-width: 0 1px 0 0;
-  padding: 0 25px;
-  margin: 0; }
-  header .back-to .icon-chevron-left {
-    color: #c1c1c1; }
-  header .back-to p {
+  header .nav-bar .brand-logo {
+    color: #ff5a5f;
+    padding: 10px 20px;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-width: 0 1px 0 0; }
+  header .nav-bar .back-to {
+    display: flex;
+    align-items: baseline;
+    background-color: #f5f5f5;
+    border-style: solid;
+    border-color: #c1c1c1;
+    border-width: 0 1px 0 0;
+    padding: 0 25px;
+    margin: 0;
     color: #484848;
     font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     padding: 5px; }
-header .center-nav {
-  display: flex;
-  align-items: baseline;
-  flex: 1 auto;
-  justify-content: space-between;
-  font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  header .center-nav .where-to {
+    header .nav-bar .back-to .icon-chevron-left {
+      color: #c1c1c1; }
+    header .nav-bar .back-to p {
+      color: #484848;
+      font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      padding: 5px; }
+  header .nav-bar .center-nav {
     display: flex;
-    align-items: baseline; }
-    header .center-nav .where-to .icon-search {
-      color: #c1c1c1;
-      padding: 0 15px; }
-  header .center-nav .membership {
-    border-style: solid;
-    border-color: black;
-    border-width: 1px;
-    padding: 0 5px;
-    margin: 0 30px 0 0; }
-header .nav-buttons {
-  display: flex;
-  height: 69px; }
-  header .nav-buttons .navLinks p {
-    height: 44.5px;
-    /**is there a better way to align this?**/
-    margin: 0;
-    padding: 0;
-    padding: 24.5px 0 0 0;
-    width: 80px;
-    text-align: center;
-    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border-style: solid;
-    border-width: 0 0 0 1px;
-    border-color: #c1c1c1; }
+    align-items: baseline;
+    flex: 1 auto;
+    justify-content: space-between;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    header .nav-bar .center-nav .where-to {
+      display: flex;
+      align-items: baseline; }
+      header .nav-bar .center-nav .where-to .icon-search {
+        color: #c1c1c1;
+        padding: 0 15px; }
+    header .nav-bar .center-nav .membership {
+      border-style: solid;
+      border-color: black;
+      border-width: 1px;
+      padding: 0 5px;
+      margin: 0 30px 0 0; }
+  header .nav-bar .nav-buttons {
+    display: flex;
+    height: 69px; }
+    header .nav-bar .nav-buttons .navLinks {
+      height: 44.5px;
+      /**is there a better way to align this?**/
+      margin: 0;
+      padding: 0;
+      padding: 24.5px 0 0 0;
+      width: 80px;
+      text-align: center;
+      font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      border-style: solid;
+      border-width: 0 0 0 1px;
+      border-color: #c1c1c1; }
 
 .image-banner {
   background-image: url("../assets/07.jpg");
@@ -146,7 +155,8 @@ header .nav-buttons {
         display: flex;
         font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
         justify-content: space-between;
-        padding: 0 0 20px 0; }
+        padding: 25px 0 20px 0;
+        align-items: center; }
         .image-banner .calendar .instant-book .calendar-description .dates-form {
           width: 70px;
           height: 25px; }
@@ -157,9 +167,8 @@ header .nav-buttons {
           border-style: solid;
           border-color: #c1c1c1;
           border-width: 1px;
-          justify-content: space-around; }
-          .image-banner .calendar .instant-book .calendar-description .guests-drop-down p {
-            font-size: 14px; }
+          justify-content: space-around;
+          font-size: 14px; }
     .image-banner .calendar .instant-book-box {
       background-color: #ff5a5f;
       height: 45px;
@@ -167,12 +176,11 @@ header .nav-buttons {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 260px; }
+      width: 260px;
+      color: #ffffff;
+      font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif; }
       .image-banner .calendar .instant-book-box .icon {
         color: #ffb400; }
-      .image-banner .calendar .instant-book-box p {
-        color: #ffffff;
-        font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .image-banner .empty-space-top {
     height: 50px; }
   .image-banner .wish-list {
@@ -230,6 +238,7 @@ header .nav-buttons {
       padding: 5px; }
 
 .property-title {
+  /**cleaned up until here! ***/
   display: flex;
   padding: 5px 450px 0 120px;
   height: 175px; }
@@ -278,26 +287,26 @@ header .nav-buttons {
       display: flex;
       align-items: center; }
   .property-info .comments-space {
-    padding: 5px 0 5px 0; }
-    .property-info .comments-space p {
-      font-size: 14px; }
-  .property-info .contact-host-letters {
-    color: #ff5a5f;
-    padding: 0 0 15px 0; }
+    padding: 10px 0 10px 0;
+    font-size: 14px; }
+    .property-info .comments-space .contact-host-letters {
+      color: #ff5a5f;
+      line-height: 3em; }
   .property-info .description-sections {
     border-style: solid;
     border-color: #c1c1c1;
     border-width: 1px 0 0 0;
     display: flex; }
     .property-info .description-sections .column-one {
-      width: 40px;
-      flex: auto; }
+      width: 200px; }
     .property-info .description-sections .second-set-columns {
       display: flex;
-      justify-content: space-between;
-      flex-grow: 1; }
-      .property-info .description-sections .second-set-columns .column-two, .property-info .description-sections .second-set-columns .column-three {
-        background-color: green; }
+      flex-wrap: wrap;
+      flex-grow: 1;
+      padding: 20px 0; }
+      .property-info .description-sections .second-set-columns .second-set-text, .property-info .description-sections .second-set-columns .text-in-salmon, .property-info .description-sections .second-set-columns .icon-and-text {
+        flex: 50%;
+        text-align: left; }
       .property-info .description-sections .second-set-columns .icon-and-text {
         display: flex;
         align-items: center; }

@@ -60,11 +60,17 @@ a.visited {
 }
 
 p {
-    line-height: .75em;
-    }
+ line-height: .75em;
+}
+
+.three-dots {
+  position: relative;
+  top: -.25em;
+  padding: 0 3px 0 0;
+  }
 
 .user-basic-info {
-    width: 200px;
+  width: 200px;
 
     .user-avatar {
       width: 90px;
@@ -84,84 +90,86 @@ header {
       display: flex;
       align-items: center;
       height: 70px;
-    }
 
-    .brand-logo {
-      color: $brand-color;
-      padding: 10px 20px;
-      border-style: solid;
-      border-color: $nav-border-color;
-      border-width: 0 1px 0 0;
-    }
 
-    .back-to {
-      display: flex;
-      align-items: baseline;
-      background-color: $bg-contrast-color;
-      border-style: solid;
-      border-color: $nav-border-color;
-      border-width: 0 1px 0 0;
-      padding: 0 25px;
-      margin: 0;
-
-      .icon-chevron-left {
-        color: $nav-border-color;
-      }
-
-      p {
-        color: $body-text-color;
-        font-family: $ff;
-        font-size: $section-heading-fs;
-        padding: 5px;
-      }
-
-    }
-
-    .center-nav {
-      display: flex;
-      align-items: baseline;
-      flex: 1 auto;
-      justify-content: space-between;
-      font-family: $ff;
-
-      .where-to {
-        display: flex;
-        align-items: baseline;
-
-        .icon-search {
-          color: $nav-border-color;
-          padding: 0 15px;
+        .brand-logo {
+          color: $brand-color;
+          padding: 10px 20px;
+          border-style: solid;
+          border-color: $nav-border-color;
+          border-width: 0 1px 0 0;
         }
-      }
 
-      .membership {
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-        padding: 0 5px;
-        margin: 0 30px 0 0;
-      }
-    }
+        .back-to {
+          display: flex;
+          align-items: baseline;
+          background-color: $bg-contrast-color;
+          border-style: solid;
+          border-color: $nav-border-color;
+          border-width: 0 1px 0 0;
+          padding: 0 25px;
+          margin: 0;
+          color: $body-text-color;
+          font-family: $ff;
+          font-size: $section-heading-fs;
+          padding: 5px;
 
-    .nav-buttons {
-      display: flex;
-      height: 69px;
+          .icon-chevron-left {
+            color: $nav-border-color;
+          }
 
-          .navLinks {
+          p {
+            color: $body-text-color;           //* here i think this is ok so i left the p**//
+            font-family: $ff;
+            font-size: $section-heading-fs;
+            padding: 5px;
+          }
 
-            p {
-             height: 44.5px;         /**is there a better way to align this?**/
-             margin: 0;
-             padding: 0;
-             padding: 24.5px 0 0 0;
-             width: 80px;
-             text-align: center;
-             font-family: $ff;
-             border-style: solid;
-             border-width: 0 0 0 1px;
-             border-color: $nav-border-color;
+        }
+
+        .center-nav {
+          display: flex;
+          align-items: baseline;
+          flex: 1 auto;
+          justify-content: space-between;
+          font-family: $ff;
+
+          .where-to {
+            display: flex;
+            align-items: baseline;
+
+            .icon-search {
+              color: $nav-border-color;
+              padding: 0 15px;
             }
           }
+
+          .membership {
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            padding: 0 5px;
+            margin: 0 30px 0 0;
+          }
+        }
+
+        .nav-buttons {
+          display: flex;
+          height: 69px;
+
+            .navLinks {
+              height: 44.5px;         /**is there a better way to align this?**/
+              margin: 0;
+              padding: 0;
+              padding: 24.5px 0 0 0;
+              width: 80px;
+              text-align: center;
+              font-family: $ff;
+              border-style: solid;
+              border-width: 0 0 0 1px;
+              border-color: $nav-border-color;
+            }
+        }
     }
 }
 
@@ -217,12 +225,14 @@ header {
         border-width: 1px;
         padding: $calendar-positioning;
 
+
+
         .calendar-description {
             display: flex;
             font-family: $ff;
             justify-content: space-between;
-            padding: 0 0 20px 0;
-
+            padding: 25px 0 20px 0;
+            align-items: center;
 
             .dates-form {
                 width: 70px;
@@ -237,10 +247,7 @@ header {
               border-color: $nav-border-color;
               border-width: 1px;
               justify-content: space-around;
-
-              p {
-                font-size:$body-content-fs;
-              }
+              font-size: $body-content-fs;
             }
         }
       }
@@ -254,14 +261,11 @@ header {
           align-items: center;
           justify-content: center;
           width: 260px;
+          color: $body-bg-color;
+          font-family: $ff;
 
           .icon {
             color: $accent-icon-color;
-          }
-
-          p {
-            color: $body-bg-color;
-            font-family: $ff;
           }
         }
       }
@@ -347,7 +351,7 @@ header {
       }
   }
 
-.property-title {
+.property-title {                            /**cleaned up until here! ***/
   display: flex;
   padding: $center-positioning;
   height: 175px;
@@ -422,16 +426,15 @@ header {
     }
 
     .comments-space {
-        padding: 5px 0 5px 0;
-        p {
-          font-size: $body-content-fs;
+        padding: 10px 0 10px 0;
+        font-size: $body-content-fs;
+
+        .contact-host-letters {
+           color: $brand-color;
+           line-height: 3em;
         }
     }
 
-    .contact-host-letters {
-        color: $brand-color;
-        padding: 0 0 15px 0;
-    }
 
 
 
@@ -442,29 +445,31 @@ header {
       display: flex;
 
       .column-one {
-          width: 40px;
-          flex: auto;
+          width: 200px;
           }
 
       .second-set-columns {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
         flex-grow: 1;
+        padding: 20px 0;
 
-          .column-two {
-            background-color: green;
-              }
+          .second-set-text {
+            flex: 50%;
+            text-align: left;
+          }
 
-          .column-three {
-              @extend .column-two;
-              }
+          .text-in-salmon {
+            @extend .second-set-text;
+          }
 
           .icon-and-text {
+            @extend .second-set-text;
             display: flex;
             align-items: center;
 
             .icon {
-            padding: 5px;
+              padding: 5px;
             }
           }
       }

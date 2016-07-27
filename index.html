@@ -37,23 +37,23 @@
         <div class="nav-buttons">                   <!--here is good place for ng-repeats!-->
             <div class="navLinks" ng-repeat="card in navCards">
                 <a href="#" class="navLink">
-                    <p>{{card.page}}</p>
+                    {{card.page}}
                 </a>
             </div>
         </div>
     </div>
-</header>
+</header>                           <!--header content -->
 
-<div class="image-banner">
+<div class="image-banner">            <!--content with picture --->
     <div class="calendar">
         <div class="price-container">
             <div class="price">
                 <div class="exact-amount">
-                    <p>{{properties[0].price}}</p>
+                    {{properties.price}}
                     <i class="icon icon-bolt"></i>
                 </div>
                 <div class="per-night">
-                    <p>Per Night</p>
+                    Per Night
                 </div>
             </div>
         </div>
@@ -62,18 +62,18 @@
         <form class="instant-book">
             <div class="booking-calendar">
                 <div class="calendar-description">
-                    <div>
-                        <p>Checkin</p>
+                    <div class="checkin">
+                        Checkin
+                        <input type="text" placeholder="mm/dd/yyyy" class="dates-form">
+                    </div>
+                    <div class="checkout">
+                        Checkout
                         <input type="text" placeholder="mm/dd/yyyy" class="dates-form">
                     </div>
                     <div>
-                        <p>Checkout</p>
-                        <input type="text" placeholder="mm/dd/yyyy" class="dates-form">
-                    </div>
-                    <div>
-                        <p>Guests</p>
+                        Guests
                         <div class="guests-drop-down">
-                            <p>1</p>
+                            1
                             <i class="icon icon-caret-down"></i>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
             </div>
             <div type="submit" value="Instant Book" class="instant-book-box">
                 <i class="icon icon-bolt"></i>
-                <p>Instant Book</p>
+                Instant Book
             </div>
         </form>
 
@@ -93,51 +93,51 @@
                 <p>Save to Wish List</p>
             </a>
             <div class="saved">
-              <p>{{properties[0].saves}} travelers saved this place</p>
+              <p>{{properties.saves}} travelers saved this place</p>
             </div>
             <div class="wish-list-additional">
                 <a href="#"  class="email">
                     <i class="icon icon-envelope"></i>
-                    <p>Email</p>
+                    Email
                 </a>
                 <a href="#" class="messenger">
                     <i class="icon icon-facebook-messenger"></i>
-                    <p>Messanger</p>
+                    Messanger
                 </a>
                 <a href="#" class="email">
-                    <p>...More</p>
+                    <span class="three-dots">...</span> More
                 </a>
             </div>
         </div>
         <div class="report-listing">
             <i class="icon icon-flag"></i>
-            <a href="#"><p>Report this listing</p></a>
+            <a href="#">Report this listing</a>
         </div>
     </div>
-</div>
+</div>         <!--content related to main image ---->
 
 
 <div class="property-title">
     <div class="user-basic-info">
         <img class="user-avatar" src="assets/15.jpg">
         <div>    <!-- here we are going to need to extract info from a user object -->
-            <p>{{users[0].name}}</p>
+            <p>{{users.name}}</p>
         </div>
     </div>
     <div class="property-description">
         <div>    <!-- here we are going to need to extract info from a user object -->
-            <h2>{{properties[0].description}}</h2>
+            <h2>{{properties.description}}</h2>
             <div class="small-box">
-                <p> {{properties[0].city}}, {{properties[0].state}}, {{properties[0].country}} </p>
+                <p> {{properties.city}}, {{properties.state}}, {{properties.country}} </p>
                 <div class="star-box">
-                    <i class="icon icon-star"></i>
-                    <i class="icon icon-star"></i>
-                    <i class="icon icon-star"></i>
-                    <i class="icon icon-star"></i>
-                    <i class="icon icon-star-half"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.starHalf}}"></i>
                 </div>
                 <i class="icon icon-caret-down"></i>
-                <p>{{properties[0].reviews}} reviews</p>
+                <p>{{properties.reviews}} reviews</p>
             </div>
             <div class="small-box">                    <!--another place to repeat information -->
                <div class="icon-box">
@@ -156,13 +156,12 @@
                 </div>
             </div>
                 <div class="icon-text-box">
-                    <p>{{properties[0].type}}</p>
-                    <p>{{properties[0].guests}}</p>
-                    <p>{{properties[0].bedrooms}}</p>
-                    <p>{{properties[0].beds}}</p>
+                    <p>{{properties.type}}</p>
+                    <p>{{properties.guests}}</p>
+                    <p>{{properties.bedrooms}}</p>
+                    <p>{{properties.beds}}</p>
                 </div>
             </div>
-        </div>
     </div>
     <div class="property-icons">
     </div>
@@ -172,20 +171,19 @@
     <h2> What guests liked about this place</h2>
     <div class="char-container">
         <div class="liked-characteristics" ng-repeat="like in likes">
-            <p>{{like}}</p>
+            {{like}}
         </div>
     </div>
     <h2>About this listing </h2>
     <div class="comments-space">
         <div ng-repeat="comment in comments">
-        <p>
            {{comment}}
-        </p>
         </div>
+        <a class="contact-host-letters" href="#">
+            Contact Host
+        </a>
     </div>
-    <a href="#">
-        <p class="contact-host-letters">Contact Host</p>
-    </a>
+
 
 
     <!--The Space-->
@@ -193,16 +191,14 @@
         <div class="column-one">
             <h3>The Space</h3>
         </div>
-        <div class="column-two">
-            <p>Accomodates: <b>{{properties[0].guests}}</b></p>
-            <p>Bathrooms: <b>{{properties[0].baths}}</b></p>
-            <p>Bedrooms: <b>{{properties[0].bedrooms}}</b></p>
-            <a href="#"  class="text-in-salmon">
-                <p>Contact Host</p>
-            </a>
-        </div>
-        <div class="column-three">
-            <p>Beds: <b>{{properties[0].beds}}</b></p>
+            <div class="second-set-columns">
+                <div class="second-set-text">Accomodates: <b>{{properties.guests}}</b></div>
+                <div class="second-set-text">Bathrooms: <b>{{properties.baths}}</b></div>
+                <div class="second-set-text"> Bedrooms: <b>{{properties.bedrooms}}</b></div>
+                <a href="#"  class="text-in-salmon">
+                    House Rules
+                </a>
+                <div class="second-set-text">Beds: <b>{{properties.beds}}</b></div>
         </div>
     </div>
 
@@ -212,29 +208,25 @@
             <h3>Amenities</h3>
         </div>
         <div class="second-set-columns">
-        <div class="column-two">
                 <div class="icon-and-text">
                     <i class="icon icon-internet"></i>
-                    <p> Internet </p>
+                    <p> Internet
                 </div>
                 <div class="icon-and-text">
                     <i class="icon icon-tv"></i>
-                    <p> TV </p>
+                    TV
                 </div>
-            </div>
-        </div>
-        <div class="column-three">
-            <div class="icon-and-text">
-                <i class="icon icon-essentials"></i>
-                <p> Essentials </p>
-            </div>
-            <div class="icon-and-text">
-                <i class="icon icon-shampoo"></i>
-                <p> Shampoo </p>
-            </div>
-            <a href="#"  class="text-in-salmon">
-                <p>More+</p>
-            </a>
+                <div class="icon-and-text">
+                    <i class="icon icon-essentials"></i>
+                    Essentials
+                </div>
+                <div class="icon-and-text">
+                    <i class="icon icon-shampoo"></i>
+                    Shampoo
+                </div>
+                <a href="#"  class="text-in-salmon">
+                    More+
+                </a>
         </div>
     </div>
 
@@ -244,34 +236,22 @@
             <h3>Prices</h3>
         </div>
         <div class="second-set-columns">
-            <div class="column-two">
-                <p>{{currencies[0].USD}}{{prices[0].cleaningFee}}</p>
-            </div>
-            <div class="column-three">
-                <p>bla</p>
-            </div>
+                {{currencies.USD}}{{prices.cleaningFee}}
         </div>
     </div>
+
+    <!--The Space-->
     <div class="description-sections">
         <div class="column-one">
             <h3>Description</h3>
         </div>
-        <div class="column-two">
-            <p>bla</p>
+        <div class="second-set-columns">
+            <div><b>The Space</b></div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices leo quam, vel tristique velit posuere eget. Donec eget tincidunt massa. Sed tempus iaculis nisl, non feugiat sapien ullamcorper nec. Nulla vitae odio mi. Nulla scelerisque est a ipsum scelerisque, et ornare felis blandit. Cras euismod efficitur malesuada. Pellentesque sollicitudin pharetra erat, sit amet gravida lectus vehicula in. Quisque risus leo, consectetur sed vestibulum et, placerat eu metus. Phasellus laoreet viverra nulla. Nullam non eleifend enim. Nunc ac sapien vestibulum, consequat erat sed, pretium libero. Etiam eu purus eget risus tincidunt maximus. In quis arcu vitae metus volutpat aliquet. Cras consequat, sem vel pharetra interdum, mi velit pharetra lectus, et molestie nulla lorem vitae quam. </div>
+            <div><b>Guest Access</b></div>
             <a href="#"  class="text-in-salmon">
-                <p>More+</p>
+                More+
             </a>
-        </div>
-    </div>
-    <div class="description-sections">
-        <div class="column-one">
-            <h3>The Space</h3>
-        </div>
-        <div class="column-two">
-            <h3></h3>
-        </div>
-        <div class="column-three">
-            <h3></h3>
         </div>
     </div>
 
@@ -280,23 +260,26 @@
         <div class="column-one">
             <h3>House Rules</h3>
         </div>
-        <div class="column-two">
-            <p>bla</p>
+        <div class="second-set-columns">
+            <div><b>The Space</b></div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices leo quam, vel tristique velit posuere eget. Donec eget tincidunt massa. Sed tempus iaculis nisl, non feugiat sapien ullamcorper nec. Nulla vitae odio mi. Nulla scelerisque est a ipsum scelerisque, et ornare felis blandit. Cras euismod efficitur malesuada. Pellentesque sollicitudin pharetra erat, sit amet gravida lectus vehicula in. Quisque risus leo, consectetur sed vestibulum et, placerat eu metus. Phasellus laoreet viverra nulla. Nullam non eleifend enim. Nunc ac sapien vestibulum, consequat erat sed, pretium libero. Etiam eu purus eget risus tincidunt maximus. In quis arcu vitae metus volutpat aliquet. Cras consequat, sem vel pharetra interdum, mi velit pharetra lectus, et molestie nulla lorem vitae quam. </div>
+            <div><b>Guest Access</b></div>
         </div>
     </div>
+
+    <!--Safety Features-------->
     <div class="description-sections">
         <div class="column-one">
             <h3>Safety Features</h3>
         </div>
-        <div class="column-two">   => NG REPEAT!
-            <p>Smoke Detector</p>
-            <p>bla</p>
-            <p>bla</p>
-        </div>
-        <div class="column-three">
-            <p>bla</p>
+        <div class="second-set-columns">
+            <div class="second-set-text" ng-repeat="feature in safetyFeatures">
+                <p>{{feature}}</p>
+            </div>
         </div>
     </div>
+
+    <!------- Availability -------------->
     <div class="description-sections">
         <div class="column-one">
             <h3>Availability</h3>
@@ -329,7 +312,7 @@
         <div class="user-basic-info">
             <img class="user-avatar" src="assets/15.jpg">
             <div>    <!-- here we are going to need to extract info from a user object -->
-                <p>{{users[0].name}}</p>
+                <p>{{users.name}}</p>
             </div>
         </div>
     </div>
