@@ -2,7 +2,7 @@
 <html ng-app="angularApp">
 <head lang="en">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=deivice-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <title>airbnb task 2 pellego</title>
 
@@ -23,12 +23,12 @@
         </div>
         <a href="#" class="back-to">
             <i class="icon icon-chevron-left"></i>
-            <p>Back to search results</p>
+            <div>Back to search results</div>
         </a>
         <div class="center-nav">
             <a href="#"  class="where-to">
                 <i class="icon icon-search"></i>
-                <p>Where to?</p>
+                Where to?
             </a>
             <a href="#" class="membership">
                 Become a host
@@ -116,28 +116,37 @@
     </div>
 </div>         <!--content related to main image ---->
 
-
 <div class="property-title">
-    <div class="user-basic-info">
-        <img class="user-avatar" src="assets/15.jpg">
-        <div>    <!-- here we are going to need to extract info from a user object -->
-            <p>{{users.name}}</p>
+    <div class="host-basic-info">
+        <img class="host-avatar" src="assets/{{host.image}}.jpg">
+        <div class="host-name">    <!-- here we are going to need to extract info from a user object -->
+            {{host.name}}
         </div>
     </div>
     <div class="property-description">
-        <div>    <!-- here we are going to need to extract info from a user object -->
-            <h2>{{properties.description}}</h2>
+        <div>
+                                    <!-- here we are going to need to extract info from a user object -->
+            <div class="title-property-description"> {{properties.description}} </div>
             <div class="small-box">
-                <p> {{properties.city}}, {{properties.state}}, {{properties.country}} </p>
+                {{properties.city}}, {{properties.state}}, {{properties.country}}
                 <div class="star-box">
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.starHalf}}"></i>
+                    <div class="star-gray">
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.star}}"></i>
+                    </div>
+                    <div class="star-yellow">
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.star}}"></i>
+                        <i class="icon icon-{{icons.starHalf}}"></i>
+                    </div>
                 </div>
                 <i class="icon icon-caret-down"></i>
-                <p>{{properties.reviews}} reviews</p>
+                {{properties.reviews}} reviews
             </div>
             <div class="small-box">                    <!--another place to repeat information -->
                <div class="icon-box">
@@ -156,10 +165,10 @@
                 </div>
             </div>
                 <div class="icon-text-box">
-                    <p>{{properties.type}}</p>
-                    <p>{{properties.guests}}</p>
-                    <p>{{properties.bedrooms}}</p>
-                    <p>{{properties.beds}}</p>
+                    <div class="text-itself">{{properties.type}}</div>
+                    <div class="text-itself">{{properties.guests}}</div>
+                    <div class="text-itself">{{properties.bedrooms}}</div>
+                    <div class="text-itself">{{properties.beds}}</div>
                 </div>
             </div>
     </div>
@@ -176,41 +185,40 @@
     </div>
     <h2>About this listing </h2>
     <div class="comments-space">
-        <div ng-repeat="comment in comments">
-           {{comment}}
+        <div ng-repeat="keyWord in keyWords">
+           {{keyWord}}
         </div>
         <a class="contact-host-letters" href="#">
             Contact Host
         </a>
     </div>
-
-
-
     <!--The Space-->
-    <div class="description-sections">
+    <div class="description-sections" id="space">
         <div class="column-one">
             <h3>The Space</h3>
         </div>
             <div class="second-set-columns">
-                <div class="second-set-text">Accomodates: <b>{{properties.guests}}</b></div>
+                <div class="second-set-text"> Accommodates: <b>{{properties.guests}}</b></div>
                 <div class="second-set-text">Bathrooms: <b>{{properties.baths}}</b></div>
                 <div class="second-set-text"> Bedrooms: <b>{{properties.bedrooms}}</b></div>
+                <div class="second-set-text">Beds: <b>{{properties.beds}}</b></div>
+                <div class="second-set-text">Property Type: <b>{{properties.propertyType}}</b></div>
+                <div class="second-set-text">Room Type: <b>{{properties.roomType}}</b></div>
                 <a href="#"  class="text-in-salmon">
                     House Rules
                 </a>
-                <div class="second-set-text">Beds: <b>{{properties.beds}}</b></div>
         </div>
     </div>
 
     <!--Amenities-->
-    <div class="description-sections">
+    <div class="description-sections" id="amenities">
         <div class="column-one">
             <h3>Amenities</h3>
         </div>
-        <div class="second-set-columns">
+        <div class="second-set-columns">    <!--NG REPEAT FROM ARRAY -->
                 <div class="icon-and-text">
                     <i class="icon icon-internet"></i>
-                    <p> Internet
+                    Internet
                 </div>
                 <div class="icon-and-text">
                     <i class="icon icon-tv"></i>
@@ -231,24 +239,37 @@
     </div>
 
     <!--Prices-->
-    <div class="description-sections">
+    <div class="description-sections" id="prices">
         <div class="column-one">
             <h3>Prices</h3>
         </div>
         <div class="second-set-columns">
-                {{currencies.USD}}{{prices.cleaningFee}}
+            <div class="half-column">
+            <div class="subtitle-in-black">Extra people: <b>{{currencies.USD}}{{prices.extraPeople}}/night after {{prices.extraPeopleAfter}} guests</b></div>
+            <div class="subtitle-in-black">Cleaning fee: <b>{{currencies.USD}}{{prices.cleaningFee}}</b></div>
+            <div class="subtitle-in-black">Weekly Discount: <b>{{prices.weeklyDiscount}}</b></div>
+            </div>
+            <div class="half-column">
+
+            <div class="subtitle-in-black">Monthly Discount: <b>{{prices.monthlyDiscount}}</b></div>
+            <div class="subtitle-in-black">Cancellation: <span class="text-in-salmon"><b>{{prices.cancellation}}</b></span></div>
+            </div>
         </div>
     </div>
 
-    <!--The Space-->
-    <div class="description-sections">
+    <!--Description-->
+    <div class="description-sections" id="description">
         <div class="column-one">
             <h3>Description</h3>
         </div>
         <div class="second-set-columns">
-            <div><b>The Space</b></div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices leo quam, vel tristique velit posuere eget. Donec eget tincidunt massa. Sed tempus iaculis nisl, non feugiat sapien ullamcorper nec. Nulla vitae odio mi. Nulla scelerisque est a ipsum scelerisque, et ornare felis blandit. Cras euismod efficitur malesuada. Pellentesque sollicitudin pharetra erat, sit amet gravida lectus vehicula in. Quisque risus leo, consectetur sed vestibulum et, placerat eu metus. Phasellus laoreet viverra nulla. Nullam non eleifend enim. Nunc ac sapien vestibulum, consequat erat sed, pretium libero. Etiam eu purus eget risus tincidunt maximus. In quis arcu vitae metus volutpat aliquet. Cras consequat, sem vel pharetra interdum, mi velit pharetra lectus, et molestie nulla lorem vitae quam. </div>
-            <div><b>Guest Access</b></div>
+            <div class="second-column-title"><b>The Space</b></div>
+            <div class="subititle-black">Peaceful retreat. Convenient location between Beach and Downtown. The house is in one of the safest
+            neighborhood in San Francisco. </div>
+            <div class="subtitle-black">Private entrance on side and access to garden.</div>
+            <div class="subtitle-black">Newly remodeled bathroom.</div>
+            <div class="subtitle-black">The bedroom has low ceiling (about 6 feet).</div>
+            <div class="guest-access">Guest Access</div>
             <a href="#"  class="text-in-salmon">
                 More+
             </a>
@@ -256,14 +277,16 @@
     </div>
 
     <!--House Rules-->
-    <div class="description-sections">
+    <div class="description-sections" id="rules">
         <div class="column-one">
             <h3>House Rules</h3>
         </div>
         <div class="second-set-columns">
-            <div><b>The Space</b></div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices leo quam, vel tristique velit posuere eget. Donec eget tincidunt massa. Sed tempus iaculis nisl, non feugiat sapien ullamcorper nec. Nulla vitae odio mi. Nulla scelerisque est a ipsum scelerisque, et ornare felis blandit. Cras euismod efficitur malesuada. Pellentesque sollicitudin pharetra erat, sit amet gravida lectus vehicula in. Quisque risus leo, consectetur sed vestibulum et, placerat eu metus. Phasellus laoreet viverra nulla. Nullam non eleifend enim. Nunc ac sapien vestibulum, consequat erat sed, pretium libero. Etiam eu purus eget risus tincidunt maximus. In quis arcu vitae metus volutpat aliquet. Cras consequat, sem vel pharetra interdum, mi velit pharetra lectus, et molestie nulla lorem vitae quam. </div>
-            <div><b>Guest Access</b></div>
+            <div class="subtitle-black">No smoking</div>
+            <div class="subtitle-black">No parties or events</div>
+            <div class="separating-box"></div>
+            <div ng-repeat="rule in rules" class="subtitle-black">{{rule}}</div>
+
         </div>
     </div>
 
@@ -274,50 +297,365 @@
         </div>
         <div class="second-set-columns">
             <div class="second-set-text" ng-repeat="feature in safetyFeatures">
-                <p>{{feature}}</p>
+                <div class="subtitle-black">{{feature}}</div>
             </div>
         </div>
     </div>
 
     <!------- Availability -------------->
-    <div class="description-sections">
+    <div class="description-sections" id="availability">
         <div class="column-one">
             <h3>Availability</h3>
         </div>
-        <div class="column-two">
-            <p>bla</p>
-        </div>
-        <div class="column-three">
+        <div class="second-set-columns">
+            <div class="subtitle-black"><b>{{properties.minStay}}</b>  minimum stay.</div>
             <a href="#"  class="text-in-salmon">
-                <p>View Calendar</p>
+                View Calendar
             </a>
+            <div class="subtitle-black">From <b>{{properties.from}}</b> the minimum stay is <b>{{properties.minimum}}</b>.</div>
         </div>
     </div>
+
+    <!--------- Guidebook ---------->
     <div class="description-sections">
         <div class="column-one">
             <h3>Guidebook</h3>
         </div>
-        <div class="column-two">
-            <p>Things to do in San fran</p>
+        <div class="second-set-columns">
+            <div class="things-to-do">
+                <a href="#"  class="text-in-salmon">
+                    Things to do in San Francisco
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-images">
+        <div class="top-box">
+            <img class="top-box-image" src="assets/{{hostPropertyPhotos[0]}}.jpg">
+            <img class="top-box-image" src="assets/{{hostPropertyPhotos[1]}}.jpg">
+        </div>
+        <div class="bottom-box">
+            <img class="bottom-box-image" src="assets/{{hostPropertyPhotos[2]}}.png">
+            <img class="bottom-box-image" src="assets/{{hostPropertyPhotos[3]}}.jpg">
+            <div class="bottom-box-image">
+                <img class="image-with-hover" src="assets/{{hostPropertyPhotos[4]}}.jpg">
+                <div class="hover-text">
+                    See all 32 photos
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="comments-section">
-    asdfsdf
+    <div class="review-section">
+        <div class="star-with-review">
+            <div class="review-title-text">{{properties.reviews}} Reviews</div>
+            <div class="star-box">
+                <div class="star-gray">
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                </div>
+                <div class="star-yellow">
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.star}}"></i>
+                    <i class="icon icon-{{icons.starHalf}}"></i>
+                </div>
+            </div>
+        </div>
+        <div class="review-box">
+            <input type="text" placeholder="Search Reviews">
+        </div>
+    </div>
+    <div class="description-sections" >
+        <div class="column-one">
+            Summary
+        </div>
+        <div class="second-set-columns">
+            <div class="summary-box">
+                <div class="summary-text">
+                    Accuracy
+                </div>
+                <div class="star-rating">
+                    <div class="star-box">
+                        <div class="star-gray">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                        <div class="star-yellow">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.starHalf}}"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-text">
+                    Communication
+                </div>
+                <div class="star-rating">
+                    <div class="star-box">
+                        <div class="star-gray">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                        <div class="star-yellow">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-text">
+                    Cleanliness
+                </div>
+                <div class="star-rating">
+                    <div class="star-box">
+                        <div class="star-gray">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                        <div class="star-yellow">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.starHalf}}"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-text">
+                    Location
+                </div>
+                <div class="star-rating">
+                    <div class="star-box">
+                        <div class="star-gray">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                        <div class="star-yellow">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.starHalf}}"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-text">
+                    Check In
+                </div>
+                <div class="star-rating">
+                    <div class="star-box">
+                        <div class="star-gray">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                        <div class="star-yellow">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="summary-box">
+                <div class="summary-text">
+                    Value
+                </div>
+                <div class="star-rating">
+                    <div class="star-box">
+                        <div class="star-gray">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                        </div>
+                        <div class="star-yellow">
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.star}}"></i>
+                            <i class="icon icon-{{icons.starHalf}}"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="commenters-section">
+        <div class="description-sections" ng-repeat="comment in comments">
+            <div class="column-one">
+                <img class="commenters-avatar" src="assets/{{comment.image}}.jpg">
+                <div class="commenters-name"> {{comment.name}} </div>
+            </div>
+            <div class="second-set-columns">
+                <div class="subtitle-black">{{comment.comment}}</div>
+                <div class="helpful-box">
+                    <div class="subtitle-black">{{comment.date}}</div>
+                    <a href="#" class="helpful">
+                        <i class="icon icon-thumbs-up"></i>
+                        <div class="subtitle-black">Helpful</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="description-sections">
+        <div class="column-one"></div>
+        <div class="second-set-columns">
+            <div class="square-container">
+                <a href="#" class="squares" id="first-box"><span>1</span></a>
+                <a href="#" class="squares"><span class="text-in-salmon">2</span></a>
+                <a href="#" class="squares"><span class="text-in-salmon">3</span></a>
+                <a href="#" class="squares"><span class="three-dots">...</span></a>
+                <a href="#" class="squares"><span class="text-in-salmon">11</span></a>
+                <a href="#" class="squares"><i class="icon icon-caret-right"></i></a>
+            </div>
+            <div class="subtitle-black">Host has {{host.reviewsOtherProps}} reviews for other properties </div>
+            <a href="#" class="view-reviews-box">
+                View other reviews
+            </a>
+        </div>
+    </div>
 </div>
 
 <div class="bottom-section">
     <div class="your-host">
-        <div class="user-basic-info">
-            <img class="user-avatar" src="assets/15.jpg">
-            <div>    <!-- here we are going to need to extract info from a user object -->
-                <p>{{users.name}}</p>
+        <div class="title-two">
+            Your Host
+        </div>
+
+        <div class="description-sections" >
+            <div class="column-one">
+                <img class="host-avatar" src="assets/{{host.image}}.jpg">
+            </div>
+            <div class="host-in-depth">
+                <div class="second-set-columns">
+                    <div class="host-name">    <!-- here we are going to need to extract info from a user object -->
+                        {{host.name}}
+                    </div>
+                    <div class="subtitle-gray">
+                    {{properties.city}}, {{properties.state}}, {{properties.countryFull}} <span class="middle-dot">.</span>
+                    Member since {{host.memberSince}}
+                    </div>
+                    <div class="presentation">
+                        <div class='subtitle-black'>{{host.tagLine}}</div>
+                        <div class="subtitle-black">{{host.presentationText}}</div>
+                    </div>
+                    <div class="response">
+                        <div class="subtitle-black">Response rate: <b>{{host.responseRate}}</b></div>
+                    </div>
+                    <div class="response">
+                        <div class="subtitle-black">Response time: <b>{{host.responseTime}}</b></div>
+                    </div>
+                </div>
+                <div class="box-with-ratings">
+                    <div class="ratings-box">
+                        <div class="orange-box">{{host.ratings}}</div>
+                        <div class="subtitle-black">Ratings</div>
+                    </div>
+                    <div class="ratings-box">
+                        <div class="orange-box">{{host.reference}}</div>
+                        <div class="subtitle-black">Reference</div>
+                    </div>
+                    <div class="checkbox">
+                        <i class="icon icon-tag-alt icon-size-2"></i>
+                        <div class="subtitle-black">Verified</div>
+                    </div>
+                    </div>
+                <a href="#" class="contact-host-button">
+                    Contact Host
+                </a>
+            </div>
+        </div>
+        <div class="description-sections" id="facebook-button">
+            <div class="column-one">
+                <div class="subtitle-gray">Social Connections</div>
+            </div>
+            <div class="second-set-columns">
+                <div class="subtitle-black">
+                    Are your friends connected with this host?
+                </div>
+                <a href="#" class="facebook-button">
+                    <i class="icon icon-facebook"></i>
+                    Connect with Facebook
+                </a>
             </div>
         </div>
     </div>
     <div class="property-location">
-        asdfasdf
+        <img src="assets/17.png">
+        <div class="title-two">
+            Similar Listings
+        </div>
+        <div class="similar-listings-properties">
+            <div class="property-box" ng-repeat="listing in similarListings">
+                <img class="property-image" src="assets/{{listing.image}}.jpg">
+                <img class="host-image" src="assets/{{listing.hostImage}}.jpg">
+                <div class="similar-listing-price">
+                    {{listing.price}}
+                </div>
+                <i class="icon icon-heart icon-size-2"></i>
+                <i class="icon icon-heart-alt icon-size-2"></i>
+                <div class="similiar-listings-description">
+                    <div class="subtitle-black">{{listing.propertyName}}</div>
+                    <div class="subtitle-gray">{{listing.description}} - {{listing.distanceAway}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="title-two">
+            Explore other options in and around {{properties.city}}
+        </div>
+        <div class="suggestions">
+            <div class="subtitle-black">
+                More places to stay in {{properties.city}}
+                <a href="#" class="back-to">
+                    <span class="subtitle-gray" ng-repeat="House in similarHousing"> <span class="middle-dot">.</span> {{House}} </span>
+                </a>
+            </div>
+            <div class="subtitle-black"> People also stay in
+                <a href="#" class="back-to">
+                    <span class="subtitle-gray" ng-repeat="Location in similarLocation"> <span class="middle-dot">.</span> {{Location}} </span>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -325,14 +663,13 @@
     <div class="top-box-footer">
         <div class="left-top-footer-box">
             <div class="language">
-                <p>English</p>
+                English
                 <i class="icon icon-caret-down"></i>
             </div>
             <div class="currency">
-                <p>USD</p>
+                USD
                 <i class="icon icon-caret-down"></i>
             </div>
-
         </div>
         <div class="right-top-footer-box">
             <div>
@@ -380,9 +717,7 @@
         </div>
         <p> &copy Airbnb, Inc. </p>
     </div>
-
 </div>
-
 
 </body>
 </html>
