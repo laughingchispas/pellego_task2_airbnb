@@ -131,4 +131,40 @@ myApp.controller('airbnbController', function($scope) {
         'Menlo Park',
         'San Mateo'
     ];
+
+    //display stars
+    $scope.ratings = { accuracy: [], communication: [], cleanliness: [], location: [], checkin: [], value: [], total: [], reviews: [] };
+
+
+    $scope.properties.ratings = { accuracy: 4.5, communication: 5, cleanliness: 4.5, location: 4.5, checkin: 5, value: 4.5, total: 5, reviews: 4.5 };
+
+    function populateRatings() {
+            angular.forEach($scope.properties.ratings, function(value,key) {
+                 // We know it's out of five, so might as well just do that
+                for (var i=1; i<=5; i++) {
+                    // If the rating is higher than this, it gets a full star
+                    if (value >= i) {
+                        // Add a full star for this key
+                        $scope.ratings[key].push('star');
+                    }
+                    // If the rating is less than this by 1/2, then a half star
+                    else if ( value + 0.5 === i ) {
+                        $scope.ratings[key].push('star-half');
+                    }
+                }
+            });
+        }
+
+    // Immediately call the function
+    populateRatings();
+
+
+    $scope.imageUrl = [
+        'assets/03.jpg',
+        'assets/06.jpg',
+        'assets/16.png',
+        'assets/02.jpg',
+        'assets/03.jpg'
+        ];
+
 });

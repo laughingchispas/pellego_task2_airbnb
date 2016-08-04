@@ -57,15 +57,17 @@ a.visited {
     position: relative;
     display: flex;
 
-    .star-yellow {
-        position: absolute;
-        left: 10px;
-        top: 0;
-        color: $accent-icon-color;
-    }
+    .star {
+        &-yellow {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            color: $accent-icon-color;
+        }
 
-    .star-gray {
-        color: $accent-text-color;
+        &-gray {
+            color: $accent-text-color;
+        }
     }
 }
 
@@ -97,30 +99,36 @@ p {
   width: 200px;
 }
 
-.host-avatar {
-  width: 90px;
-  border-radius: 45px;
-  margin: 20px 0 0 0;
+.host {
+
+    &-avatar {
+      width: 90px;
+      border-radius: 100%;
+      margin: 20px 0 0 0;
+    }
+
+    &-name {
+      font-family: $ff;
+      text-align: center;
+      width: 90px;
+    }
 }
 
-.host-name {
-  font-family: $ff;
-  text-align: center;
-  width: 90px;
-}
+.commenters {
 
-.commenters-avatar {
-  width: 70px;
-  border-radius: 35px;
-  margin: 20px 0 0 60px;
-}
+    &-avatar {
+      width: 70px;
+      border-radius: 100%;
+      margin: 20px 0 0 60px;
+    }
 
-.commenters-name {
-  font-family: $ff;
-  text-align: center;
-  width: 70px;
-  font-size: $body-content-fs;
-  padding: 0 0 0 60px;
+    &-name {
+      font-family: $ff;
+      text-align: center;
+      width: 70px;
+      font-size: $body-content-fs;
+      padding: 0 0 0 60px;
+    }
 }
 
 .description-sections {
@@ -145,6 +153,8 @@ p {
       }
 }
 
+
+                                            /***fixing until here &&&&&& **/
 .subtitle-gray {
     color: $accent-text-color;
     font-size: $body-content-fs;
@@ -245,10 +255,11 @@ header {
   background-image: url('../assets/07.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  padding-top: 50%;                             /**** LOOK AT THIS!!***/
   position: relative;
   background-position: center center;          /**** LOOK AT THIS!!***/
+  height: 100px;
+  width: 100%;
+  padding-top: 50%;                             /**** LOOK AT THIS!!***/
 
   .calendar {
     width: 300px;
@@ -435,23 +446,25 @@ header {
       padding: 5px 0;
     }
 
-    .icon-caret-down {
+    .icon {
+    &-caret-down {
       padding: 0 5px 0 5px;
     }
 
-    .icon-box {
+    &-box {
       width: 480px;
       display: flex;
       justify-content: space-around;
     }
 
-    .icon-text-box {
+    &-text-box {
       @extend .icon-box;
       text-align: center;
 
       .text-itself {
         width: 120px;
       }
+    }
     }
 
   }
@@ -581,7 +594,9 @@ header {
 
       .top-box-image {
         flex: 50%;
-        padding: 0 0 3px 3px;
+        margin: 0 0 3px 3px;
+        background-position: center center;
+        background-size: cover;
       }
   }
 
@@ -590,30 +605,43 @@ header {
       height: 200px;
       padding: 0 0 30px 0;
 
-      .bottom-box-image {
+      &-image {
         width: 33.33%;                    /** why does flex not work here? I had to use width!?**/
-        padding: 0 0 0 3px;
-        position: relative;
+        margin: 0 0 0 3px;
+        background-position: center center;
+        background-size: cover;
 
         .image-with-hover {
            width: 100%;
-           height: 200px;
+           height: 197px;
            padding: 0 0 3px 0;
-          }
+           position: relative;
+           background-position: center center;
+           background-size: cover;
 
-        .hover-text {
-          background-color: $footer-bg-color;
-          position: absolute;
-          color: $body-bg-color;                          /** couldn't get this to be truly white! **/
-          top:0;
-          left:0;
-          z-index: 300;
-          height: 105px;
-          opacity: 0.4;
-          text-align: center;
-          margin: 0 0 0 3px;
-          width: 99%;
-          padding: 95px 0 0 0;
+           .overlay-div {
+                background-color: rgba(0,0,0,0.4);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 200px;
+                z-index: 500;
+
+                .hover-text {
+                  position: absolute;
+                  color: $body-bg-color;                          /** couldn't get this to be truly white! **/
+                  top:0;
+                  left:0;
+                  z-index: 300;
+                  height: 105px;
+
+                  text-align: center;
+                  margin: 0 0 0 3px;
+                  width: 99%;
+                  padding: 95px 0 0 0;
+                }
+            }
         }
       }
     }
@@ -805,16 +833,15 @@ header {
         background-color: $brand-color;
         flex: 100%;
         color: white;
-        font-family: #ff;
         align-items: center;
         height: 28px;
         border-radius: 3px;
-        margin: 10px 280px 0 0;
+        margin: 10px 400px 0 0;
         padding: 0 8px;
         font-family: $ff;
         font-size: 14px;
         display: flex;
-        align-items: center;
+        text-align: center;
       }
     }
 
@@ -827,19 +854,18 @@ header {
       border-style: solid;
       font-family: $ff;
 
+
       .facebook-button {
         background-color: #29487D;
         flex: 100%;
         display: flex;
         color: white;
-        font-family: #ff;
         align-items: center;
         justify-content: space-between;
         height: 28px;
         border-radius: 3px;
-        margin: 10px 290px 0 0;
-        padding: 0 8px;
-        font-family: $ff;
+        margin: 10px 0 0 0;
+        padding: 0 12px 0 8px;
         font-size: 14px;
       }
     }
@@ -871,7 +897,6 @@ header {
       .property-box {
         width: 32%;
         position: relative;
-        font-family: #ff;
 
         .icon-heart {
           color: $accent-text-color;
@@ -898,7 +923,7 @@ header {
           top: 180px;
           right: 20px;
           width: 60px;
-          border-radius: 40px;
+          border-radius: 100%;
           border-style: solid;
           border-color: $body-bg-color;
           border-width: 2px;
@@ -926,6 +951,7 @@ header {
 
 .footer {
   background-color: $footer-bg-color;
+  background-image: url('../assets/background-swirls.png');
   padding: $wider-positioning;
   height: 500px;
   font-family: $ff;
@@ -996,7 +1022,7 @@ header {
         border-style: solid;
         border-color: $nav-border-color;
         border-width: 1px;
-        border-radius: 40px;
+        border-radius: 100%;
         color: $body-bg-color;
       }
     }

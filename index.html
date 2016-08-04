@@ -118,7 +118,7 @@
 
 <div class="property-title">
     <div class="host-basic-info">
-        <img class="host-avatar" src="assets/{{host.image}}.jpg">
+        <img class="host-avatar" ng-src="assets/{{host.image}}.jpg">
         <div class="host-name">    <!-- here we are going to need to extract info from a user object -->
             {{host.name}}
         </div>
@@ -131,18 +131,12 @@
                 {{properties.city}}, {{properties.state}}, {{properties.country}}
                 <div class="star-box">
                     <div class="star-gray">
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.star}}"></i>
+                        <i ng-repeat="star in ratings.total track by $index"
+                           class="icon icon-{{star}}"> </i>
                     </div>
                     <div class="star-yellow">
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.star}}"></i>
-                        <i class="icon icon-{{icons.starHalf}}"></i>
+                        <i ng-repeat="star in ratings.reviews track by $index"
+                           class="icon icon-{{star}}"> </i>
                     </div>
                 </div>
                 <i class="icon icon-caret-down"></i>
@@ -332,16 +326,19 @@
 
     <div class="bottom-images">
         <div class="top-box">
-            <img class="top-box-image" src="assets/{{hostPropertyPhotos[0]}}.jpg">
-            <img class="top-box-image" src="assets/{{hostPropertyPhotos[1]}}.jpg">
+            <div class="top-box-image" ng-style="{'background-image': 'url(' + imageUrl[0] + ')'}"></div>
+            <div class="top-box-image" ng-style="{'background-image': 'url(' + imageUrl[1] + ')'}"></div>
         </div>
         <div class="bottom-box">
-            <img class="bottom-box-image" src="assets/{{hostPropertyPhotos[2]}}.png">
-            <img class="bottom-box-image" src="assets/{{hostPropertyPhotos[3]}}.jpg">
+            <div class="bottom-box-image" ng-style="{'background-image': 'url(' + imageUrl[2] + ')'}"></div>
+            <div class="bottom-box-image" ng-style="{'background-image': 'url(' + imageUrl[3] + ')'}"></div>
             <div class="bottom-box-image">
-                <img class="image-with-hover" src="assets/{{hostPropertyPhotos[4]}}.jpg">
-                <div class="hover-text">
-                    See all 32 photos
+                <div class="image-with-hover" ng-style="{'background-image': 'url(' + imageUrl[4] + ')'}">
+                    <div class="overlay-div">
+                        <div class="hover-text">
+                            See all 32 photos
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -354,18 +351,12 @@
             <div class="review-title-text">{{properties.reviews}} Reviews</div>
             <div class="star-box">
                 <div class="star-gray">
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
+                    <i ng-repeat="star in ratings.total track by $index"
+                       class="icon icon-{{star}}"> </i>
                 </div>
                 <div class="star-yellow">
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.star}}"></i>
-                    <i class="icon icon-{{icons.starHalf}}"></i>
+                    <i ng-repeat="star in ratings.reviews track by $index"
+                       class="icon icon-{{star}}"> </i>
                 </div>
             </div>
         </div>
@@ -385,18 +376,12 @@
                 <div class="star-rating">
                     <div class="star-box">
                         <div class="star-gray">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <i ng-repeat="star in ratings.total track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                         <div class="star-yellow">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.starHalf}}"></i>
+                            <i ng-repeat="star in ratings.accuracy track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                     </div>
                 </div>
@@ -408,18 +393,12 @@
                 <div class="star-rating">
                     <div class="star-box">
                         <div class="star-gray">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <i ng-repeat="star in ratings.total track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                         <div class="star-yellow">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <i ng-repeat="star in ratings.communication track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                     </div>
                 </div>
@@ -431,18 +410,12 @@
                 <div class="star-rating">
                     <div class="star-box">
                         <div class="star-gray">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <i ng-repeat="star in ratings.total track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                         <div class="star-yellow">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.starHalf}}"></i>
+                            <i ng-repeat="star in ratings.cleanliness track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                     </div>
                 </div>
@@ -454,18 +427,12 @@
                 <div class="star-rating">
                     <div class="star-box">
                         <div class="star-gray">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <i ng-repeat="star in ratings.total track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                         <div class="star-yellow">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.starHalf}}"></i>
+                            <i ng-repeat="star in ratings.location track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                     </div>
                 </div>
@@ -477,18 +444,14 @@
                 <div class="star-rating">
                     <div class="star-box">
                         <div class="star-gray">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <div class="star-gray">
+                                <i ng-repeat="star in ratings.total track by $index"
+                                   class="icon icon-{{star}}"> </i>
+                            </div>
                         </div>
                         <div class="star-yellow">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <i ng-repeat="star in ratings.checkin track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                     </div>
                 </div>
@@ -500,18 +463,14 @@
                 <div class="star-rating">
                     <div class="star-box">
                         <div class="star-gray">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
+                            <div class="star-gray">
+                                <i ng-repeat="star in ratings.total track by $index"
+                                   class="icon icon-{{star}}"> </i>
+                            </div>
                         </div>
                         <div class="star-yellow">
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.star}}"></i>
-                            <i class="icon icon-{{icons.starHalf}}"></i>
+                            <i ng-repeat="star in ratings.value track by $index"
+                               class="icon icon-{{star}}"> </i>
                         </div>
                     </div>
                 </div>
@@ -522,7 +481,7 @@
     <div class="commenters-section">
         <div class="description-sections" ng-repeat="comment in comments">
             <div class="column-one">
-                <img class="commenters-avatar" src="assets/{{comment.image}}.jpg">
+                <img class="commenters-avatar" ng-src="assets/{{comment.image}}.jpg">
                 <div class="commenters-name"> {{comment.name}} </div>
             </div>
             <div class="second-set-columns">
@@ -564,7 +523,7 @@
 
         <div class="description-sections" >
             <div class="column-one">
-                <img class="host-avatar" src="assets/{{host.image}}.jpg">
+                <img class="host-avatar" ng-src="assets/{{host.image}}.jpg">
             </div>
             <div class="host-in-depth">
                 <div class="second-set-columns">
