@@ -202,6 +202,7 @@ header {
 
           .icon-chevron-left {
             color: $nav-border-color;
+            padding: 0 5px;
           }
         }
 
@@ -226,7 +227,7 @@ header {
             border-style: solid;
             border-color: black;
             border-width: 1px;
-            padding: 0 5px;
+            padding: 5px 10px;
             margin: 0 30px 0 0;
           }
         }
@@ -829,14 +830,19 @@ header {
         }
       }
 
+      #column-two-special-one {
+        background-color: yellow;
+        display: inline-block;
+        flex: none;
+      }
+
       .contact-host-button {
         background-color: $brand-color;
-        flex: 100%;
+        flex: auto;
         color: white;
         align-items: center;
         height: 28px;
         border-radius: 3px;
-        margin: 10px 400px 0 0;
         padding: 0 8px;
         font-family: $ff;
         font-size: 14px;
@@ -852,12 +858,15 @@ header {
       border-color: $nav-border-color;
       border-width: 1px 0 0 0;
       border-style: solid;
-      font-family: $ff;
 
+      #column-two-special {
+          font-family: $ff;
+          display: inline-block;
+          flex: none;
+      }
 
       .facebook-button {
         background-color: #29487D;
-        flex: 100%;
         display: flex;
         color: white;
         align-items: center;
@@ -867,6 +876,7 @@ header {
         margin: 10px 0 0 0;
         padding: 0 12px 0 8px;
         font-size: 14px;
+        width: 170px;
       }
     }
   }
@@ -920,7 +930,7 @@ header {
 
         .host-image {
           position: absolute;
-          top: 180px;
+          bottom: 40px;
           right: 20px;
           width: 60px;
           border-radius: 100%;
@@ -944,7 +954,7 @@ header {
           font-size: $section-heading-fs;
 
         }
-          }
+      }
     }
   }
 }

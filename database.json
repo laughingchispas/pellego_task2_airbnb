@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "name":"Paul",
+      "age":"36"
+    },
+    {
+      "name":"Jamie",
+      "age":"31"
+    },
+    {
+      "name":"Mary",
+      "age":"22"
+    },
+    {
+      "name":"Marijn",
+      "age":"25"
+    }
+  ]
+
+}

@@ -125,7 +125,8 @@ header .nav-bar {
     align-items: center;
     font-size: 16px; }
     header .nav-bar .back-to .icon-chevron-left {
-      color: #c1c1c1; }
+      color: #c1c1c1;
+      padding: 0 5px; }
   header .nav-bar .center-nav {
     display: flex;
     align-items: baseline;
@@ -142,7 +143,7 @@ header .nav-bar {
       border-style: solid;
       border-color: black;
       border-width: 1px;
-      padding: 0 5px;
+      padding: 5px 10px;
       margin: 0 30px 0 0; }
   header .nav-bar .nav-buttons {
     display: flex;
@@ -550,14 +551,17 @@ header .nav-bar {
           position: absolute;
           top: -15px;
           left: 0; }
+    .bottom-section .your-host .host-in-depth #column-two-special-one {
+      background-color: yellow;
+      display: inline-block;
+      flex: none; }
     .bottom-section .your-host .host-in-depth .contact-host-button {
       background-color: #ff5a5f;
-      flex: 100%;
+      flex: auto;
       color: white;
       align-items: center;
       height: 28px;
       border-radius: 3px;
-      margin: 10px 400px 0 0;
       padding: 0 8px;
       font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 14px;
@@ -569,11 +573,13 @@ header .nav-bar {
       align-items: baseline;
       border-color: #c1c1c1;
       border-width: 1px 0 0 0;
-      border-style: solid;
-      font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      border-style: solid; }
+      .bottom-section .your-host #facebook-button #column-two-special {
+        font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        display: inline-block;
+        flex: none; }
       .bottom-section .your-host #facebook-button .facebook-button {
         background-color: #29487D;
-        flex: 100%;
         display: flex;
         color: white;
         align-items: center;
@@ -582,7 +588,8 @@ header .nav-bar {
         border-radius: 3px;
         margin: 10px 0 0 0;
         padding: 0 12px 0 8px;
-        font-size: 14px; }
+        font-size: 14px;
+        width: 170px; }
   .bottom-section .suggestions .subtitle-black, .bottom-section .suggestions .property-info #description .guest-access, .property-info #description .bottom-section .suggestions .guest-access {
     padding: 0 0 20px 0; }
   .bottom-section .property-location {
@@ -616,7 +623,7 @@ header .nav-bar {
           width: 100%; }
         .bottom-section .property-location .similar-listings-properties .property-box .host-image {
           position: absolute;
-          top: 180px;
+          bottom: 40px;
           right: 20px;
           width: 60px;
           border-radius: 100%;

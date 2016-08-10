@@ -168,3 +168,4 @@ myApp.controller('airbnbController', function($scope) {
         ];
 
 });
+

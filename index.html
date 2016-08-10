@@ -12,6 +12,7 @@
 
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/angularApp.js"></script>
+    <script src="scripts/myAngular.js"></script>
 </head>
 
 <body ng-controller="airbnbController">
@@ -558,17 +559,19 @@
                         <i class="icon icon-tag-alt icon-size-2"></i>
                         <div class="subtitle-black">Verified</div>
                     </div>
-                    </div>
+                </div>
+                <div id="column-two-special-one">
                 <a href="#" class="contact-host-button">
                     Contact Host
                 </a>
+                </div>
             </div>
         </div>
         <div class="description-sections" id="facebook-button">
             <div class="column-one">
                 <div class="subtitle-gray">Social Connections</div>
             </div>
-            <div class="second-set-columns">
+            <div class="second-set-columns" id="column-two-special">
                 <div class="subtitle-black">
                     Are your friends connected with this host?
                 </div>
@@ -615,6 +618,19 @@
                 </a>
             </div>
         </div>
+    </div>
+</div>
+
+<div ng-app="mainApp">
+    <div ng-controller="peopleController">
+        <ul>
+            <h2>
+                Names and ages of the....bla bla
+            </h2>
+            <li ng-repeat="person in persons">
+                {{person.Name + " : " + person.Age}}
+            </li>
+        </ul>
     </div>
 </div>
 

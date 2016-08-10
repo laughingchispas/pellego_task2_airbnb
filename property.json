@@ -1,0 +1,20 @@
+{
+      "description": "Private flat, with parking and yard",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA",
+      "countryFull": "United States",
+      "type": "Entire home/apt",
+      "guests":"4",
+      "bedrooms": "1",
+      "beds":"2",
+      "reviews":"74",
+      "price": "$139",
+      "baths":"1",
+      "saves": "634",
+      "roomType": "Entire home/apt",
+      "propertyType": "Apartment",
+      "minStay": "1 night",
+      "from": "Aug 21, 2016 - Aug 05 2017",
+      "minimum":"3 nights"
+}
