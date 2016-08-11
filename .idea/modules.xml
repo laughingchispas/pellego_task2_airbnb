@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/pellego_task2_airbnb.iml" filepath="$PROJECT_DIR$/.idea/pellego_task2_airbnb.iml" />
       <module fileurl="file://$PROJECT_DIR$/trial.iml" filepath="$PROJECT_DIR$/trial.iml" />
     </modules>
   </component>

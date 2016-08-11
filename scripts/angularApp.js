@@ -1,6 +1,6 @@
 var myApp = angular.module('angularApp', []);
 
-myApp.controller('airbnbController', function($scope) {
+myApp.controller('airbnbController', function($scope, $http) {
 
     $scope.comments = [
         {name: 'Richard', image: '14', date: 'June 2016',
@@ -81,7 +81,7 @@ myApp.controller('airbnbController', function($scope) {
       bedrooms: '1',
       beds:'2',
       reviews:'74',
-      price: '$139',
+      price: '$169',
       baths:'1',
       saves: '634',
       roomType: 'Entire home/apt',
@@ -167,5 +167,19 @@ myApp.controller('airbnbController', function($scope) {
         'assets/03.jpg'
         ];
 
+    $http.get('database.json')
+        .then(function(response){
+                $scope.persons = response.data.records;
+        });
+
+    $http.get('property.json')
+        .then(function(response){
+                $scope.property = response.data;
+        });
+
 });
+
+
+
+
 
