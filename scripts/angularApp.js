@@ -70,27 +70,6 @@ myApp.controller('airbnbController', function($scope, $http) {
           cancellation: 'Flexible',
     };
 
-    $scope.properties = {
-      description: 'Private flat, with parking and yard',
-      city: 'San Francisco',
-      state: 'CA',
-      country: 'USA',
-      countryFull: 'United States',
-      type: 'Entire home/apt',
-      guests:'4',
-      bedrooms: '1',
-      beds:'2',
-      reviews:'74',
-      price: '$169',
-      baths:'1',
-      saves: '634',
-      roomType: 'Entire home/apt',
-      propertyType: 'Apartment',
-      minStay: '1 night',
-      from: 'Aug 21, 2016 - Aug 05 2017',
-      minimum:'3 nights'
-    };
-
     $scope.rules = [
         'Please respect quiet hours from 11PM to 7AM',
         'Also, please avoid making noise in the hallway or side of the house. The neighbors can hear that noise and are very picky about noise. Sorry about this and thanks for your understanding.'
@@ -132,14 +111,21 @@ myApp.controller('airbnbController', function($scope, $http) {
         'San Mateo'
     ];
 
+    $scope.property = [];
+
+    $http.get('property.json')
+        .then(function(response){
+                $scope.property = response.data;
+        });
+
     //display stars
     $scope.ratings = { accuracy: [], communication: [], cleanliness: [], location: [], checkin: [], value: [], total: [], reviews: [] };
 
 
-    $scope.properties.ratings = { accuracy: 4.5, communication: 5, cleanliness: 4.5, location: 4.5, checkin: 5, value: 4.5, total: 5, reviews: 4.5 };
+    $scope.property.ratings = { accuracy: 4.5, communication: 5, cleanliness: 4.5, location: 4.5, checkin: 5, value: 4.5, total: 5, reviews: 4.5 };
 
     function populateRatings() {
-            angular.forEach($scope.properties.ratings, function(value,key) {
+            angular.forEach($scope.property.ratings, function(value,key) {
                  // We know it's out of five, so might as well just do that
                 for (var i=1; i<=5; i++) {
                     // If the rating is higher than this, it gets a full star
@@ -166,16 +152,6 @@ myApp.controller('airbnbController', function($scope, $http) {
         'assets/02.jpg',
         'assets/03.jpg'
         ];
-
-    $http.get('database.json')
-        .then(function(response){
-                $scope.persons = response.data.records;
-        });
-
-    $http.get('property.json')
-        .then(function(response){
-                $scope.property = response.data;
-        });
 
 });
 
