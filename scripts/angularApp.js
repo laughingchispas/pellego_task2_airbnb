@@ -2,124 +2,111 @@ var myApp = angular.module('angularApp', []);
 
 myApp.controller('airbnbController', function($scope, $http) {
 
-    $scope.comments = [
-        {name: 'Richard', image: '14', date: 'June 2016',
-                comment: 'Wow. Immaculately Clean. Great bed. Fridge stocked with soda and beer (complimentary). Assorted teas. And did I mention the bed? OMG. It was amazing. Thanks, Yann.'},
-        {name: 'Fache', image:'13', date: 'June 2016',
-                comment: 'Great stay. Yann was very helpful and accommodating, and parking was very easy, which is a big plus in SF. The neighborhood is very quiet, and there are some lovely coffee shops on the high street just two blocks away.'},
-        {name: 'Fanne', image: '12', date: 'June 2016',
-                comment:'We had an overall nice experience staying with Yann who was kind and responsive when we had questions and requests. We booked it for 4 people and I would say it is too small, It is better for 2. You will have to order food most likely as the place is too small to do basic cooking. As'}
-    ];
+    $scope.comments = [];
+        $http.get('jsonFiles/comments.json')
+           .then(function(response){
+                   $scope.comments = response.data;
+        });
 
-    $scope.currencies = {
-          USD: '$',
-          name: '€'
-    };
+    $scope.currencies = [];
+        $http.get('jsonFiles/currency.json')
+            .then(function(response){
+                    $scope.currencies = response.data;
+        });
 
-    $scope.host = {
-        image: '15',
-        name: 'Yann',
-        responseTime: '1 hour',
-        responseRate: '100%',
-        memberSince: 'March 2014',
-        ratings: '157',
-        reference: '1',
-        reviewsOtherProps: '68',
-        tagLine: 'Hi! Bonjour! Oi! Konichiwa!',
-        presentationText: 'I am originally from Montreal Canada (quebecois) and been living in this beautiful city SF for the last few years. I lived in 6 different countries and visited numerous (sorry stopped counting). I like meeting people from all over the world. '
-    };
+    $scope.host = [];
+        $http.get('jsonFiles/host.json')
+            .then(function(response){
+                    $scope.host = response.data;
+        });
 
-    $scope.hostPropertyPhotos = [
-        '03',
-        '06',
-        '16',
-        '02',
-        '03'
-    ];
+    $scope.hostPropertyPhotos = [];
+        $http.get('jsonFiles/hostPropertyPhotos.json')
+            .then(function(response){
+                    $scope.hostPropertyPhotos = response.data;
+        });
 
-    $scope.icons = {
-        star: 'star',
-        starHalf: 'star-half'
-    };
+    $scope.icons = [];
+        $http.get('jsonFiles/icons.json')
+           .then(function(response){
+                   $scope.icons = response.data;
+        });
 
-    $scope.keyWords = [
-        'Beautiful 1 bedroom, 1 bathroom private apartment. Private entrance on side. Free off-street parking.',
-        'Brand new remodeled bathroom',
-        '1 block from subway and lots restaurants/bar walking distance'
-    ];
+    $scope.keyWords = [];
+       $http.get('jsonFiles/keyWords.json')
+           .then(function(response){
+                   $scope.keyWords = response.data;
+       });
 
-    $scope.likes = [
-        'cozy', 'residential', 'close to public transport', 'quiet', 'walkable'
-    ];
+    $scope.likes = [];
+         $http.get('jsonFiles/likes.json')
+           .then(function(response){
+                   $scope.likes = response.data;
+         });
 
 //navigation link content
-    $scope.navCards = [
-        {page: 'Help'},
-        {page: 'Sign Up'},
-        {page: 'Log In'}
-    ];
+    $scope.navCards = [];
+         $http.get('jsonFiles/navCards.json')
+           .then(function(response){
+                   $scope.navCards = response.data;
+         });
 
-    $scope.prices = {
-          cleaningFee: '30',
-          name: 'Yann',
-          bedrooms: 'search',
-          extraPeople: '20',
-          extraPeopleAfter: '3',
-          weeklyDiscount: '0%',
-          monthlyDiscount: '0%',
-          cancellation: 'Flexible',
-    };
+    $scope.prices = [];
+          $http.get('jsonFiles/prices.json')
+             .then(function(response){
+                     $scope.prices = response.data;
+          });
 
-    $scope.rules = [
-        'Please respect quiet hours from 11PM to 7AM',
-        'Also, please avoid making noise in the hallway or side of the house. The neighbors can hear that noise and are very picky about noise. Sorry about this and thanks for your understanding.'
-     ];
+    $scope.rules = [];
+        $http.get('jsonFiles/rules.json')
+           .then(function(response){
+                  $scope.rules = response.data;
+        });
 
-    $scope.safetyFeatures = [
-        'Smoke Detector',
-        'Carbon Monoxide Detector',
-        'First Aid Kit',
-        'Safety Card',
-        'Fire Extinguisher'
-    ];
+    $scope.safetyFeatures = [];
+        $http.get('jsonFiles/safetyFeatures.json')
+            .then(function(response){
+                    $scope.safetyFeatures = response.data;
+        });
 
-    $scope.similarHousing = [
-        'Houses',
-        'Bed and Breakfasts',
-        'Lofts',
-        'Villas',
-        'Condominiums'
-    ];
+    $scope.similarHousing = [];
+        $http.get('jsonFiles/similarHousing.json')
+            .then(function(response){
+                    $scope.similarHousing = response.data;
+        });
 
-    $scope.similarListings = [
-        {propertyName: 'Ingleside Hideaway', image: '04', propertyType: 'June 2016', hostImage:'10', price: '$169', description:'Entire Home/Apt', distanceAway:'2.0 mi'},
-        {propertyName: 'Newly Renovated, Modern B...', image:'05', propertyType: 'June 2016', hostImage:'09', price: '$158', description:'Entire Home/Apt', distanceAway:'3.3 mi'},
-        {propertyName: 'Cozy 2bd/1ba, outer Missio...', image: '08', propertyType: 'June 2016', hostImage:'11', price: '$143', description:'Entire Home/Apt', distanceAway:'2.4 mi'}
-    ];
+    $scope.similarListings = [];
+        $http.get('jsonFiles/similarListings.json')
+            .then(function(response){
+                    $scope.similarListings = response.data;
+        });
 
-    $scope.similarLocation = [
-        'Sonoma Vaction Rentals',
-        'Petaluma Veaction Rentals',
-        'Berkeley Vacation Rentals',
-        'Santa Cruz Vacation Rentals',
-        'San Francisco',
-        'San Jose',
-        'Carmel',
-        'Sunnyvale',
-        'Oakland',
-        'Menlo Park',
-        'San Mateo'
-    ];
+
+    $scope.imageUrl = [];
+        $http.get('jsonFiles/imageUrl.json')
+            .then(function(response){
+                    $scope.imageUrl = response.data;
+        });
+
+
+    $scope.similarLocation = [],
+        $http.get('jsonFiles/similarLocation.json')
+            .then(function(response){
+                    $scope.similarLocation = response.data;
+        });
 
     $scope.property = [];
-
-    $http.get('property.json')
-        .then(function(response){
-                $scope.property = response.data;
+        $http.get('jsonFiles/property.json')
+            .then(function(response){
+                    $scope.property = response.data;
         });
 
     //display stars
-    $scope.ratings = { accuracy: [], communication: [], cleanliness: [], location: [], checkin: [], value: [], total: [], reviews: [] };
+    $scope.ratings = [];
+         $http.get('jsonFiles/ratings.json')
+            .then(function(response){
+                    $scope.ratings = response.data;
+          });
 
 
     $scope.property.ratings = { accuracy: 4.5, communication: 5, cleanliness: 4.5, location: 4.5, checkin: 5, value: 4.5, total: 5, reviews: 4.5 };
@@ -143,15 +130,6 @@ myApp.controller('airbnbController', function($scope, $http) {
 
     // Immediately call the function
     populateRatings();
-
-
-    $scope.imageUrl = [
-        'assets/03.jpg',
-        'assets/06.jpg',
-        'assets/16.png',
-        'assets/02.jpg',
-        'assets/03.jpg'
-        ];
 
 });
 
