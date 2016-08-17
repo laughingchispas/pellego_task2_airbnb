@@ -364,9 +364,11 @@ header .nav-bar {
   .property-info #prices .half-column {
     width: 50%; }
   .property-info #description .second-column-title {
-    padding: 0 0 10px 0; }
+    padding: 0 0 10px 0;
+    flex: none; }
   .property-info #description .subtitle-black, .property-info #description .guest-access {
-    width: 100%; }
+    width: 100%;
+    flex: none; }
   .property-info #description .guest-access {
     padding: 10px 0 20px 0; }
   .property-info #rules .subtitle-black, .property-info #rules #description .guest-access, .property-info #description #rules .guest-access {

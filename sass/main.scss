@@ -552,10 +552,12 @@ header {
   #description {
     .second-column-title {
       padding: 0 0 10px 0;
+      flex: none;
     }
 
-    .subtitle-black{
+    .subtitle-black {
       width: 100%;
+      flex: none;
     }
 
     .guest-access {

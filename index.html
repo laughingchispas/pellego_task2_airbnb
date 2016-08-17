@@ -211,7 +211,7 @@
             <h3>Amenities</h3>
         </div>
         <div class="second-set-columns">    <!--NG REPEAT FROM ARRAY -->
-                <div class="icon-and-text">
+                <div class="icon-and-text" ng-repeat="card in property.amenities">
                     <i class="icon icon-internet"></i>
                     Internet
                 </div>
@@ -259,11 +259,9 @@
         </div>
         <div class="second-set-columns">
             <div class="second-column-title"><b>The Space</b></div>
-            <div class="subititle-black">Peaceful retreat. Convenient location between Beach and Downtown. The house is in one of the safest
-            neighborhood in San Francisco. </div>
-            <div class="subtitle-black">Private entrance on side and access to garden.</div>
-            <div class="subtitle-black">Newly remodeled bathroom.</div>
-            <div class="subtitle-black">The bedroom has low ceiling (about 6 feet).</div>
+            <div class="subtitle-black" ng-repeat="description in property.descriptions" >
+                {{description}}
+            </div>
             <div class="guest-access">Guest Access</div>
             <a href="#"  class="text-in-salmon">
                 More+
@@ -280,7 +278,7 @@
             <div class="subtitle-black">No smoking</div>
             <div class="subtitle-black">No parties or events</div>
             <div class="separating-box"></div>
-            <div ng-repeat="rule in property.rules" class="subtitle-black">{{rule}}</div>
+            <div ng-repeat="rule in property.rules" class="subtitle-black">{{rule}}</br></div>
 
         </div>
     </div>
@@ -319,7 +317,7 @@
         <div class="second-set-columns">
             <div class="things-to-do">
                 <a href="#"  class="text-in-salmon">
-                    Things to do in San Francisco
+                    Things to do in {{property.city}}
                 </a>
             </div>
         </div>
@@ -337,7 +335,7 @@
                 <div class="image-with-hover" ng-style="{'background-image': 'url(' + property.imageUrl[4] + ')'}">
                     <div class="overlay-div">
                         <div class="hover-text">
-                            See all 32 photos
+                            See all {{property.numberOfPhotos}} photos
                         </div>
                     </div>
                 </div>

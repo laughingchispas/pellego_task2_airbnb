@@ -51,10 +51,17 @@ myApp.controller('airbnbController', function($scope, $http) {
         });
 
     //display stars
-    $scope.ratings = { accuracy: [], communication: [], cleanliness: [], location: [], checkin: [], value: [], total: [], reviews: [] };
+    $scope.ratings = {};
+        $http.get('jsonFiles/ratings.json')
+            .then(function(response){
+                    $scope.ratings = response.data;
+        });
 
-
-    $scope.property.ratings = { accuracy: 4.5, communication: 5, cleanliness: 4.5, location: 4.5, checkin: 5, value: 4.5, total: 5, reviews: 4.5 };
+    $scope.property.ratings = {};
+        $http.get('jsonFiles/property.json')
+                .then(function(response){
+                $scope.property.ratings = response.data;
+        });
 
     function populateRatings() {
             angular.forEach($scope.property.ratings, function(value,key) {

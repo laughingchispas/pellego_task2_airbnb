@@ -11,6 +11,7 @@
 	"reviews": "74",
 	"price": "$1009",
 	"baths": "1",
+	"numberOfPhotos":"32",
 	"saves": "634",
 	"roomType": "Entire home/apt",
 	"propertyType": "Apartment",
@@ -67,5 +68,24 @@
 		"reviewsOtherProps": "68",
 		"tagLine": "Hi! Bonjour! Oi! Konichiwa!",
 		"presentationText": "I am originally from Montreal Canada (quebecois) and been living in this beautiful city SF for the last few years. I lived in 6 different countries and visited numerous (sorry stopped counting). I like meeting people from all over the world."
+	},
+	"descriptions": [
+		"Peaceful retreat. Convenient location between Beach and Downtown. The house is in one of the safest neighborhood in San Francisco.",
+		"Private entrance on side and access to garden.",
+		"Newly remodeled bathroom.",
+		"The bedroom has low ceiling (about 6 feet)."
+	]
+	"amenities": [
+		"Internet"
+	],
+	"ratings": { 
+		"accuracy": "4.5", 	
+		"communication": "5", 
+		"cleanliness": "4.5", 
+		"location": "4.5", 
+		"checkin": "5", 
+		"value": "4.5", 
+		"total": "5", 
+		"reviews": "4.5" 
 	}
 }
