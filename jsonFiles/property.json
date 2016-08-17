@@ -1,20 +1,71 @@
 {
-      "description": "Private flat, with parking and yard",
-      "city": "San Francisco",
-      "state": "CA",
-      "country": "USA",
-      "countryFull": "United States",
-      "type": "Entire home/apt",
-      "guests":"4",
-      "bedrooms": "1",
-      "beds":"2",
-      "reviews":"74",
-      "price": "$1009",
-      "baths":"1",
-      "saves": "634",
-      "roomType": "Entire home/apt",
-      "propertyType": "Apartment",
-      "minStay": "1 night",
-      "from": "Aug 21, 2016 - Aug 05 2017",
-      "minimum":"3 nights"
+	"description": "Private flat, with parking and yard",
+	"city": "San Francisco",
+	"state": "CA",
+	"country": "USA",
+	"countryFull": "United States",
+	"type": "Entire home/apt",
+	"guests": "4",
+	"bedrooms": "1",
+	"beds": "2",
+	"reviews": "74",
+	"price": "$1009",
+	"baths": "1",
+	"saves": "634",
+	"roomType": "Entire home/apt",
+	"propertyType": "Apartment",
+	"minStay": "1 night",
+	"from": "Aug 21, 2016 - Aug 05 2017",
+	"minimum": "3 nights",
+	"safetyFeatures": ["Smoke Detector",
+		"Carbon Monoxide Detector",
+		"First Aid Kit",
+		"Safety Card",
+		"Fire Extinguisher"
+	],
+	"rules": [
+		"Please respect quiet hours from 11PM to 7AM",
+		"Also, please avoid making noise in the hallway or side of the house. The neighbors can hear that noise and are very picky about noise. Sorry about this and thanks for your understanding."
+	],
+	"keyWords": [
+		"Beautiful 1 bedroom, 1 bathroom private apartment. Private entrance on side. Free off-street parking.",
+		"Brand new remodeled bathroom",
+		"1 block from subway and lots restaurants/bar walking distance"
+	],
+	"likes": [
+		"cozy",
+		"residential",
+		"close to public transport",
+		"quiet",
+		"walkable"
+	],
+	"imageUrl": [
+		"assets/03.jpg",
+		"assets/06.jpg",
+		"assets/16.png",
+		"assets/02.jpg",
+		"assets/03.jpg"
+	],
+	"prices": {
+		"cleaningFee": "30",
+		"name": "Yann",
+		"bedrooms": "search",
+		"extraPeople": "20",
+		"extraPeopleAfter": "3",
+		"weeklyDiscount": "0%",
+		"monthlyDiscount": "0%",
+		"cancellation": "Flexible"
+	},
+	"host": {
+		"image": "15",
+		"name": "Yann",
+		"responseTime": "1 hour",
+		"responseRate": "100%",
+		"memberSince": "March 2014",
+		"ratings": "157",
+		"reference": "1",
+		"reviewsOtherProps": "68",
+		"tagLine": "Hi! Bonjour! Oi! Konichiwa!",
+		"presentationText": "I am originally from Montreal Canada (quebecois) and been living in this beautiful city SF for the last few years. I lived in 6 different countries and visited numerous (sorry stopped counting). I like meeting people from all over the world."
+	}
 }

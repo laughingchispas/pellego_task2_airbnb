@@ -2,6 +2,18 @@ var myApp = angular.module('angularApp', []);
 
 myApp.controller('airbnbController', function($scope, $http) {
 
+    //navigation link content
+    $scope.navCards = [
+        {page: "Help"},
+        {page: "Sign Up"},
+        {page: "Log In"}
+    ]
+
+    $scope.icons = {
+        star: "star",
+        starHalf: "star-half"
+     };
+
     $scope.comments = [];
         $http.get('jsonFiles/comments.json')
            .then(function(response){
@@ -12,61 +24,6 @@ myApp.controller('airbnbController', function($scope, $http) {
         $http.get('jsonFiles/currency.json')
             .then(function(response){
                     $scope.currencies = response.data;
-        });
-
-    $scope.host = [];
-        $http.get('jsonFiles/host.json')
-            .then(function(response){
-                    $scope.host = response.data;
-        });
-
-    $scope.hostPropertyPhotos = [];
-        $http.get('jsonFiles/hostPropertyPhotos.json')
-            .then(function(response){
-                    $scope.hostPropertyPhotos = response.data;
-        });
-
-    $scope.icons = [];
-        $http.get('jsonFiles/icons.json')
-           .then(function(response){
-                   $scope.icons = response.data;
-        });
-
-    $scope.keyWords = [];
-       $http.get('jsonFiles/keyWords.json')
-           .then(function(response){
-                   $scope.keyWords = response.data;
-       });
-
-    $scope.likes = [];
-         $http.get('jsonFiles/likes.json')
-           .then(function(response){
-                   $scope.likes = response.data;
-         });
-
-//navigation link content
-    $scope.navCards = [];
-         $http.get('jsonFiles/navCards.json')
-           .then(function(response){
-                   $scope.navCards = response.data;
-         });
-
-    $scope.prices = [];
-          $http.get('jsonFiles/prices.json')
-             .then(function(response){
-                     $scope.prices = response.data;
-          });
-
-    $scope.rules = [];
-        $http.get('jsonFiles/rules.json')
-           .then(function(response){
-                  $scope.rules = response.data;
-        });
-
-    $scope.safetyFeatures = [];
-        $http.get('jsonFiles/safetyFeatures.json')
-            .then(function(response){
-                    $scope.safetyFeatures = response.data;
         });
 
     $scope.similarHousing = [];
@@ -81,14 +38,6 @@ myApp.controller('airbnbController', function($scope, $http) {
                     $scope.similarListings = response.data;
         });
 
-
-    $scope.imageUrl = [];
-        $http.get('jsonFiles/imageUrl.json')
-            .then(function(response){
-                    $scope.imageUrl = response.data;
-        });
-
-
     $scope.similarLocation = [],
         $http.get('jsonFiles/similarLocation.json')
             .then(function(response){
@@ -102,11 +51,7 @@ myApp.controller('airbnbController', function($scope, $http) {
         });
 
     //display stars
-    $scope.ratings = [];
-         $http.get('jsonFiles/ratings.json')
-            .then(function(response){
-                    $scope.ratings = response.data;
-          });
+    $scope.ratings = { accuracy: [], communication: [], cleanliness: [], location: [], checkin: [], value: [], total: [], reviews: [] };
 
 
     $scope.property.ratings = { accuracy: 4.5, communication: 5, cleanliness: 4.5, location: 4.5, checkin: 5, value: 4.5, total: 5, reviews: 4.5 };

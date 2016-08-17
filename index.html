@@ -174,13 +174,13 @@
 <div class="property-info">
     <h2> What guests liked about this place</h2>
     <div class="char-container">
-        <div class="liked-characteristics" ng-repeat="like in likes">
+        <div class="liked-characteristics" ng-repeat="like in property.likes">
             {{like}}
         </div>
     </div>
     <h2>About this listing </h2>
     <div class="comments-space">
-        <div ng-repeat="keyWord in keyWords">
+        <div ng-repeat="keyWord in property.keyWords">
            {{keyWord}}
         </div>
         <a class="contact-host-letters" href="#">
@@ -240,14 +240,14 @@
         </div>
         <div class="second-set-columns">
             <div class="half-column">
-            <div class="subtitle-in-black">Extra people: <b>{{currencies.USD}}{{prices.extraPeople}}/night after {{prices.extraPeopleAfter}} guests</b></div>
-            <div class="subtitle-in-black">Cleaning fee: <b>{{currencies.USD}}{{prices.cleaningFee}}</b></div>
-            <div class="subtitle-in-black">Weekly Discount: <b>{{prices.weeklyDiscount}}</b></div>
+            <div class="subtitle-in-black">Extra people: <b>{{currencies.USD}}{{property.prices.extraPeople}}/night after {{property.prices.extraPeopleAfter}} guests</b></div>
+            <div class="subtitle-in-black">Cleaning fee: <b>{{currencies.USD}}{{property.prices.cleaningFee}}</b></div>
+            <div class="subtitle-in-black">Weekly Discount: <b>{{property.prices.weeklyDiscount}}</b></div>
             </div>
             <div class="half-column">
 
-            <div class="subtitle-in-black">Monthly Discount: <b>{{prices.monthlyDiscount}}</b></div>
-            <div class="subtitle-in-black">Cancellation: <span class="text-in-salmon"><b>{{prices.cancellation}}</b></span></div>
+            <div class="subtitle-in-black">Monthly Discount: <b>{{property.prices.monthlyDiscount}}</b></div>
+            <div class="subtitle-in-black">Cancellation: <span class="text-in-salmon"><b>{{property.prices.cancellation}}</b></span></div>
             </div>
         </div>
     </div>
@@ -280,7 +280,7 @@
             <div class="subtitle-black">No smoking</div>
             <div class="subtitle-black">No parties or events</div>
             <div class="separating-box"></div>
-            <div ng-repeat="rule in rules" class="subtitle-black">{{rule}}</div>
+            <div ng-repeat="rule in property.rules" class="subtitle-black">{{rule}}</div>
 
         </div>
     </div>
@@ -291,7 +291,7 @@
             <h3>Safety Features</h3>
         </div>
         <div class="second-set-columns">
-            <div class="second-set-text" ng-repeat="feature in safetyFeatures">
+            <div class="second-set-text" ng-repeat="feature in property.safetyFeatures">
                 <div class="subtitle-black">{{feature}}</div>
             </div>
         </div>
@@ -327,14 +327,14 @@
 
     <div class="bottom-images">
         <div class="top-box">
-            <div class="top-box-image" ng-style="{'background-image': 'url(' + imageUrl[0] + ')'}"></div>
-            <div class="top-box-image" ng-style="{'background-image': 'url(' + imageUrl[1] + ')'}"></div>
+            <div class="top-box-image" ng-style="{'background-image': 'url(' + property.imageUrl[0] + ')'}"></div>
+            <div class="top-box-image" ng-style="{'background-image': 'url(' + property.imageUrl[1] + ')'}"></div>
         </div>
         <div class="bottom-box">
-            <div class="bottom-box-image" ng-style="{'background-image': 'url(' + imageUrl[2] + ')'}"></div>
-            <div class="bottom-box-image" ng-style="{'background-image': 'url(' + imageUrl[3] + ')'}"></div>
+            <div class="bottom-box-image" ng-style="{'background-image': 'url(' + property.imageUrl[2] + ')'}"></div>
+            <div class="bottom-box-image" ng-style="{'background-image': 'url(' + property.imageUrl[3] + ')'}"></div>
             <div class="bottom-box-image">
-                <div class="image-with-hover" ng-style="{'background-image': 'url(' + imageUrl[4] + ')'}">
+                <div class="image-with-hover" ng-style="{'background-image': 'url(' + property.imageUrl[4] + ')'}">
                     <div class="overlay-div">
                         <div class="hover-text">
                             See all 32 photos
@@ -508,7 +508,7 @@
                 <a href="#" class="squares"><span class="text-in-salmon">11</span></a>
                 <a href="#" class="squares"><i class="icon icon-caret-right"></i></a>
             </div>
-            <div class="subtitle-black">Host has {{host.reviewsOtherProps}} reviews for other properties </div>
+            <div class="subtitle-black">Host has {{property.host.reviewsOtherProps}} reviews for other properties </div>
             <a href="#" class="view-reviews-box">
                 View other reviews
             </a>
@@ -524,35 +524,35 @@
 
         <div class="description-sections" >
             <div class="column-one">
-                <img class="host-avatar" ng-src="assets/{{host.image}}.jpg">
+                <img class="host-avatar" ng-src="assets/{{property.host.image}}.jpg">
             </div>
             <div class="host-in-depth">
                 <div class="second-set-columns">
                     <div class="host-name">    <!-- here we are going to need to extract info from a user object -->
-                        {{host.name}}
+                        {{property.host.name}}
                     </div>
                     <div class="subtitle-gray">
                     {{property.city}}, {{property.state}}, {{property.countryFull}} <span class="middle-dot">.</span>
-                    Member since {{host.memberSince}}
+                    Member since {{property.host.memberSince}}
                     </div>
                     <div class="presentation">
-                        <div class='subtitle-black'>{{host.tagLine}}</div>
-                        <div class="subtitle-black">{{host.presentationText}}</div>
+                        <div class='subtitle-black'>{{property.host.tagLine}}</div>
+                        <div class="subtitle-black">{{property.host.presentationText}}</div>
                     </div>
                     <div class="response">
-                        <div class="subtitle-black">Response rate: <b>{{host.responseRate}}</b></div>
+                        <div class="subtitle-black">Response rate: <b>{{property.host.responseRate}}</b></div>
                     </div>
                     <div class="response">
-                        <div class="subtitle-black">Response time: <b>{{host.responseTime}}</b></div>
+                        <div class="subtitle-black">Response time: <b>{{property.host.responseTime}}</b></div>
                     </div>
                 </div>
                 <div class="box-with-ratings">
                     <div class="ratings-box">
-                        <div class="orange-box">{{host.ratings}}</div>
+                        <div class="orange-box">{{property.host.ratings}}</div>
                         <div class="subtitle-black">Ratings</div>
                     </div>
                     <div class="ratings-box">
-                        <div class="orange-box">{{host.reference}}</div>
+                        <div class="orange-box">{{property.host.reference}}</div>
                         <div class="subtitle-black">Reference</div>
                     </div>
                     <div class="checkbox">
@@ -589,8 +589,8 @@
         </div>
         <div class="similar-listings-properties">
             <div class="property-box" ng-repeat="listing in similarListings">
-                <img class="property-image" src="assets/{{listing.image}}.jpg">
-                <img class="host-image" src="assets/{{listing.hostImage}}.jpg">
+                <img class="property-image" ng-src="assets/{{listing.image}}.jpg">
+                <img class="host-image" ng-src="assets/{{listing.hostImage}}.jpg">
                 <div class="similar-listing-price">
                     {{listing.price}}
                 </div>
