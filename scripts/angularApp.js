@@ -44,27 +44,17 @@ myApp.controller('airbnbController', function($scope, $http) {
                     $scope.similarLocation = response.data;
         });
 
-    $scope.property = [];
-        $http.get('jsonFiles/property.json')
-            .then(function(response){
-                    $scope.property = response.data;
-        });
-
     //display stars
-    $scope.ratings = {};
-        $http.get('jsonFiles/ratings.json')
-            .then(function(response){
-                    $scope.ratings = response.data;
-        });
 
-    $scope.property.ratings = {};
-        $http.get('jsonFiles/property.json')
-                .then(function(response){
-                $scope.property.ratings = response.data;
-        });
+    $scope.ratings = {};
+    $http.get('jsonFiles/ratings.json')
+         .then(function(response){
+             $scope.ratings = response.data;
+         });
+
 
     function populateRatings() {
-            angular.forEach($scope.property.ratings, function(value,key) {
+            angular.forEach($scope.property.propertyRatings, function(value,key) {
                  // We know it's out of five, so might as well just do that
                 for (var i=1; i<=5; i++) {
                     // If the rating is higher than this, it gets a full star
@@ -80,8 +70,12 @@ myApp.controller('airbnbController', function($scope, $http) {
             });
         }
 
-    // Immediately call the function
-    populateRatings();
+    $scope.property = [];
+        $http.get('jsonFiles/property.json')
+            .then(function(response){
+                    $scope.property = response.data;
+            populateRatings();
+        });
 
 });
 

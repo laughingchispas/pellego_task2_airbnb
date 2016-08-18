@@ -11,7 +11,7 @@
 	"reviews": "74",
 	"price": "$1009",
 	"baths": "1",
-	"numberOfPhotos":"32",
+	"numberOfPhotos": "32",
 	"saves": "634",
 	"roomType": "Entire home/apt",
 	"propertyType": "Apartment",
@@ -74,18 +74,18 @@
 		"Private entrance on side and access to garden.",
 		"Newly remodeled bathroom.",
 		"The bedroom has low ceiling (about 6 feet)."
-	]
+	],
 	"amenities": [
 		"Internet"
 	],
-	"ratings": { 
-		"accuracy": "4.5", 	
-		"communication": "5", 
-		"cleanliness": "4.5", 
-		"location": "4.5", 
-		"checkin": "5", 
-		"value": "4.5", 
-		"total": "5", 
-		"reviews": "4.5" 
+	"propertyRatings": {
+		"accuracy": "4.5",
+		"communication": "5",
+		"cleanliness": "4.5",
+		"location": "4.5",
+		"checkin": "5",
+		"value": "4.5",
+		"total": "5",
+		"reviews": "4.5"
 	}
 }
